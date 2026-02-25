@@ -68,7 +68,8 @@ CREATE OR REPLACE VIEW public.v_reco_candidates_with_eligibility AS
 SELECT
   rc.*,
   NULL::BIGINT AS student_id,
-  NULL::BOOLEAN AS eligible;
+  NULL::BOOLEAN AS eligible
+FROM public.v_reco_candidates rc;
 -- Lưu ý: view này chỉ là template.
 -- Backend nên query v_reco_candidates rồi gọi fn_is_eligible(student_id, subject_id) cho từng môn,
 -- hoặc viết query trực tiếp theo student_id để tránh NULL.

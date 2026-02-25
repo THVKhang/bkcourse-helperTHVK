@@ -21,10 +21,11 @@ CREATE TABLE IF NOT EXISTS subjects (
   department VARCHAR(100),
   workload_score NUMERIC(4,2) DEFAULT 5.00,
   is_active BOOLEAN DEFAULT TRUE,
-  CONSTRAINT chk_credits CHECK (credits BETWEEN 1 AND 4),
+  CONSTRAINT chk_credits CHECK (credits BETWEEN 0 AND 10),
   CONSTRAINT chk_workload CHECK (workload_score BETWEEN 0 AND 10)
 );
-
+ALTER TABLE subjects DROP CONSTRAINT chk_credits;
+ALTER TABLE subjects ADD CONSTRAINT chk_credits CHECK (credits BETWEEN 0 AND 10);
 -- =========================
 -- 3) Prerequisites
 -- =========================

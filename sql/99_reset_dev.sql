@@ -17,6 +17,6 @@ TRUNCATE TABLE public.program_courses RESTART IDENTITY CASCADE;
 TRUNCATE TABLE public.programs RESTART IDENTITY CASCADE;
 
 -- 4) Optionally clear students/subjects/prerequisites too (commented)
--- TRUNCATE TABLE public.prerequisites RESTART IDENTITY CASCADE;
--- TRUNCATE TABLE public.subjects RESTART IDENTITY CASCADE;
--- TRUNCATE TABLE public.students RESTART IDENTITY CASCADE;
+TRUNCATE TABLE public.prerequisites RESTART IDENTITY CASCADE;
+TRUNCATE TABLE public.subjects RESTART IDENTITY CASCADE;
+TRUNCATE TABLE public.students RESTART IDENTITY CASCADE;

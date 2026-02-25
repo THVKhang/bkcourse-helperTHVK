@@ -7,7 +7,7 @@ ON CONFLICT (student_code) DO NOTHING;
 
 -- mark CO1001 as PASSED
 INSERT INTO student_course_history(student_id, subject_id, term_code, status, grade)
-SELECT s.student_id, 'CO1001', '241', 'PASSED', 8.0
+SELECT s.student_id, 'CO1005', '241', 'PASSED', 8.0
 FROM students s
 WHERE s.student_code='2212345'
 ON CONFLICT (student_id, subject_id, term_code) DO UPDATE

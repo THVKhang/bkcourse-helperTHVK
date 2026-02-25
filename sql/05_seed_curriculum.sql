@@ -424,3 +424,4 @@ VALUES
 ON CONFLICT (subject_id, prereq_subject_id, relation_type) DO NOTHING;
 
 COMMIT;
+
