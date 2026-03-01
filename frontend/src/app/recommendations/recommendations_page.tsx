@@ -18,6 +18,7 @@ export default function RecommendationsPage() {
   const [programId, setProgramId] = useState<number | null>(null);
 
   const [semesterNo, setSemesterNo] = useState(1);
+  const [termCode, setTermCode] = useState("242");
   const [termProfile, setTermProfile] = useState<"NORMAL" | "SUMMER">("NORMAL");
   const [targetCredits, setTargetCredits] = useState(18);
 
@@ -28,7 +29,7 @@ export default function RecommendationsPage() {
   useEffect(() => {
     api.getPrograms().then((p) => {
       setPrograms(p);
-      if (p[0]) setProgramId(p[0].id);
+      if (p[0]) setProgramId(p[0].program_id);
     });
   }, []);
 
@@ -45,7 +46,7 @@ export default function RecommendationsPage() {
       });
       setResult(r);
 
-      const s = await api.getSummary(studentCode, programId);
+      const s = await api.getSummary(studentCode, programId, termCode);
       setSummary(s);
 
       toast.success("Generated recommendations");
@@ -87,6 +88,11 @@ export default function RecommendationsPage() {
             </div>
 
             <div className="grid gap-2">
+              <label className="text-sm font-medium">Term code</label>
+              <Input value={termCode} onChange={(e) => setTermCode(e.target.value)} />
+            </div>
+
+            <div className="grid gap-2">
               <label className="text-sm font-medium">Program</label>
               <Select value={programId ? String(programId) : ""} onValueChange={(v) => setProgramId(Number(v))}>
                 <SelectTrigger>
@@ -94,8 +100,8 @@ export default function RecommendationsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   {programs.map((p) => (
-                    <SelectItem key={p.id} value={String(p.id)}>
-                      {p.code} — {p.name}
+                    <SelectItem key={p.program_id} value={String(p.program_id)}>
+                      {p.name} (Year {p.cohort_year})
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -185,8 +191,8 @@ export default function RecommendationsPage() {
                     <TableBody>
                       {result.courses.length ? (
                         result.courses.map((c) => (
-                          <TableRow key={c.subject_code}>
-                            <TableCell className="font-medium">{c.subject_code}</TableCell>
+                          <TableRow key={c.subject_id}>
+                            <TableCell className="font-medium">{c.subject_id}</TableCell>
                             <TableCell className="text-muted-foreground">{c.subject_name || ""}</TableCell>
                             <TableCell>{c.credits}</TableCell>
                             <TableCell>{c.workload_score}</TableCell>

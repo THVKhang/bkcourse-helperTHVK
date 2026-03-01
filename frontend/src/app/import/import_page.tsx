@@ -17,31 +17,10 @@ import {
 } from "@/components/ui/table";
 
 import { toast } from "sonner";
-
-type ParsedMeeting = {
-  day_of_week: number;
-  start_period: number;
-  duration: number;
-  room?: string | null;
-};
-
-type ParsedSection = {
-  subject_code: string;
-  section_code: string;
-  teacher?: string | null;
-  meetings: ParsedMeeting[];
-};
-
-type ImportIssue = { level: string; message: string };
-
-type PasteImportResponse = {
-  import_id: number;
-  sections: ParsedSection[];
-  issues: ImportIssue[];
-};
+import { ParsedMeeting, ParsedSection, PasteImportResponse } from "@/lib/types";
 
 function meetingText(m: ParsedMeeting) {
-  const end = m.start_period + m.duration - 1;
+  const end = (m.start_period || 0) + (m.duration || 0) - 1;
   return `D${m.day_of_week} P${m.start_period}-${end}${m.room ? ` • ${m.room}` : ""}`;
 }
 
@@ -158,8 +137,8 @@ export default function ImportPage() {
                 <TableBody>
                   {result?.sections?.length ? (
                     result.sections.map((s, idx) => (
-                      <TableRow key={`${s.subject_code}-${s.section_code}-${idx}`}>
-                        <TableCell className="font-medium">{s.subject_code}</TableCell>
+                      <TableRow key={`${s.subject_id}-${s.section_code}-${idx}`}>
+                        <TableCell className="font-medium">{s.subject_id}</TableCell>
                         <TableCell>{s.section_code}</TableCell>
                         <TableCell className="text-sm text-muted-foreground">
                           {s.meetings?.length
