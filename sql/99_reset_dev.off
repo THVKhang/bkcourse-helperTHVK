@@ -10,7 +10,7 @@ TRUNCATE TABLE public.sections RESTART IDENTITY CASCADE;
 TRUNCATE TABLE public.raw_import_items RESTART IDENTITY CASCADE;
 TRUNCATE TABLE public.term_imports RESTART IDENTITY CASCADE;
 
--- 3) Clear recommendation-related data (keep subjects/prereq if you want)
+-- 3) Clear recommendation-relatedocker compose down -vd data (keep subjects/prereq if you want)
 TRUNCATE TABLE public.student_course_history RESTART IDENTITY CASCADE;
 TRUNCATE TABLE public.semester_plan RESTART IDENTITY CASCADE;
 TRUNCATE TABLE public.program_courses RESTART IDENTITY CASCADE;
