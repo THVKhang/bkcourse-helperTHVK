@@ -178,3 +178,15 @@ WHERE ma.day_of_week IS NOT NULL
   AND mb.start_period IS NOT NULL AND mb.duration IS NOT NULL
   AND ma.start_period <= (mb.start_period + mb.duration - 1)
   AND mb.start_period <= (ma.start_period + ma.duration - 1);
+
+-- =========================
+-- 10) Shared Plans
+-- =========================
+CREATE TABLE IF NOT EXISTS shared_plans (
+  share_id VARCHAR(36) PRIMARY KEY,
+  student_id BIGINT REFERENCES students(student_id) ON DELETE SET NULL,
+  term_code VARCHAR(10),
+  plan_data JSONB NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+

@@ -24,3 +24,5 @@ class StudentSummaryResponse(BaseModel):
     registered_credits: int
     remaining_credits: int
     total_credits: int
+    year: int = 1
+    suggested_semester_no: int = 1

@@ -4,3 +4,7 @@ __pycache__/
 node_modules/
 .next/
 dist/
+backend/venv/
+*.db
+check_db.py
+fix_db.py

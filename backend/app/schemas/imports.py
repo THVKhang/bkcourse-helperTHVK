@@ -18,6 +18,12 @@ class ParsedMeeting(BaseModel):
     room: str | None = None
     campus_code: str | None = None
     is_lab: bool | None = None
+    study_weeks: List[int] = []
+
+class ParsedSubject(BaseModel):
+    subject_id: str
+    subject_name: str
+    credits: float
 
 class ParsedSection(BaseModel):
     subject_id: str
@@ -28,5 +34,6 @@ class ParsedSection(BaseModel):
 
 class PasteImportResponse(BaseModel):
     import_id: int
+    subjects: List[ParsedSubject] = []
     sections: List[ParsedSection]
     issues: List[ImportIssue] = []

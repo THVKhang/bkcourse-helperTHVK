@@ -6,11 +6,13 @@ from typing import List
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(env_file="../.env", env_file_encoding="utf-8", extra="ignore")
 
     DB_URL: str
     CORS_ORIGINS: str = "http://localhost:3000"
     DEBUG: bool = False
+    SUPABASE_JWT_SECRET: str = ""
+    RESEND_API_KEY: str = ""
 
     @field_validator("CORS_ORIGINS")
     @classmethod

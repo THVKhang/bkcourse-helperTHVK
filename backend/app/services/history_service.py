@@ -25,6 +25,15 @@ def upsert_history(db: Session, student_code: str, items: list[HistoryItem]) -> 
     db.commit()
     return get_history(db, student_code)
 
+def detect_year(earned_credits: int, total_credits: int = 128) -> dict:
+    """Detect student year and suggest next semester based on earned credits."""
+    credits_per_year = max(total_credits / 4, 1)
+    year = min(int(earned_credits // credits_per_year) + 1, 4)
+    # Each year has 2 semesters: Year 1 = HK 1-2, Year 2 = HK 3-4, etc.
+    completed_semesters = min(int(earned_credits // max(credits_per_year / 2, 1)), 8)
+    suggested_semester_no = min(completed_semesters + 1, 8)
+    return {"year": year, "suggested_semester_no": suggested_semester_no}
+
 def compute_summary(db: Session, student_code: str, program_id: int, registered_credits: int) -> dict:
     student = get_or_create_student(db, student_code)
     passed_ids = [r[0] for r in db.execute(
@@ -40,4 +49,11 @@ def compute_summary(db: Session, student_code: str, program_id: int, registered_
     program = db.get(Program, program_id)
     total = int(program.total_credits if program and program.total_credits is not None else 128)
     remaining = max(total - earned, 0)
-    return {"earned_credits": earned, "registered_credits": registered_credits, "remaining_credits": remaining, "total_credits": total}
+    year_info = detect_year(earned, total)
+    return {
+        "earned_credits": earned,
+        "registered_credits": registered_credits,
+        "remaining_credits": remaining,
+        "total_credits": total,
+        **year_info,
+    }

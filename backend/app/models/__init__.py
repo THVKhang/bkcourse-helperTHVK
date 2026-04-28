@@ -10,3 +10,5 @@ from .program import Program
 from .program_course import ProgramCourse
 from .semester_plan import SemesterPlan
 from .student_course_history import StudentCourseHistory
+from .shared_plan import SharedPlan
+from .user import User

@@ -9,5 +9,5 @@ router = APIRouter(prefix="/schedule", tags=["schedule"])
 
 @router.post("/generate", response_model=ScheduleGenerateResponse)
 def generate(req: ScheduleGenerateRequest, db: Session = Depends(get_db)):
-    options = generate_options(db, req.section_ids, req.max_options)
-    return ScheduleGenerateResponse(options=options)
+    options, alternative_sections = generate_options(db, req)
+    return ScheduleGenerateResponse(options=options, alternative_sections=alternative_sections)

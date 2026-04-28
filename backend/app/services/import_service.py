@@ -3,14 +3,45 @@ import hashlib
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
-from app.models import TermImport, RawImportItem, Section, SectionMeeting
+from app.models import TermImport, RawImportItem, Section, SectionMeeting, Subject
 from app.schemas.imports import PasteImportRequest, PasteImportResponse
 from app.parsers.hcmut_portal_parser import parse_portal_text
 from app.services.student_service import get_or_create_student
 
 def paste_import(db: Session, req: PasteImportRequest) -> PasteImportResponse:
     student = get_or_create_student(db, req.student_code)
-    sections, issues = parse_portal_text(req.raw_text)
+    sections, issues, parsed_subjects = parse_portal_text(req.raw_text)
+
+    # Upsert subjects to ensure we have the correct credits and names
+    for ps in parsed_subjects:
+        subj = db.get(Subject, ps.subject_id)
+        if not subj:
+            subj = Subject(
+                subject_id=ps.subject_id,
+                subject_name=ps.subject_name,
+                credits=int(ps.credits),
+                workload_score=5.00,
+                is_active=True
+            )
+            db.add(subj)
+        else:
+            subj.subject_name = ps.subject_name
+            subj.credits = int(ps.credits)
+    db.flush()
+
+    # Ensure all subjects referenced by sections exist (placeholder if missing)
+    for s in sections:
+        subj = db.get(Subject, s.subject_id)
+        if not subj:
+            subj = Subject(
+                subject_id=s.subject_id,
+                subject_name="Môn học (Tự động tạo)",
+                credits=3,  # Default
+                workload_score=5.00,
+                is_active=True
+            )
+            db.add(subj)
+            db.flush()
 
     imp = TermImport(student_id=student.student_id, term_code=req.term_code, source_type="paste")
     db.add(imp)
@@ -38,6 +69,7 @@ def paste_import(db: Session, req: PasteImportRequest) -> PasteImportResponse:
                 room=m.room,
                 campus_code=m.campus_code,
                 is_lab=m.is_lab,
+                study_weeks=m.study_weeks,
                 warnings=None,
             ))
     db.commit()

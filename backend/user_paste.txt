@@ -1,0 +1,78 @@
+  ĐĂNG KÝ MÔN HỌC
+ Đăng xuất
+ Xem Lịch sử đăng ký/Kết quả hậu kiểm
+ Trần Hoàng Vỹ Khang (2352502)
+ĐĂNG KÝ/ HIỆU CHỈNH     (HK252_D3) Đăng ký bổ sung môn học học kỳ 2/2025-2026 đợt 3 và Kết quả đợt 2 (Sinh viên - Học viên) và Anh văn nhu cầu
+Lịch đăng ký
+#	Từ ngày	Đến ngày
+23/12/2025 10:00	26/12/2025 07:00
+Chọn môn học đăng ký
+học máy
+
+STT		Mã MH	Tên MH	Số tín chỉ	BB/TC	
+1		AS5041	Động lực học máy	3.0		
+2		CO3117	Học máy	3.0		
+CO3117 - Học máy
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+A01	10/70	V	A01				70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - - 8 9 - - - - - - -	B4-405	1		1234--789-12345678------------
+CC01	80/80	V	CC01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- 2 3 - - - - - - - - - - - - -	C5-401	1		1234--789-12345678------------
+L01	80/80	V	L01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - 4 5 - - - - - - - - - - -	H3-402	2		1234--789-12345678------------
+L02	60/60	V	L02	"Chưa/Đang phân công"			60	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - - - - - 9 10 - - - - - -	H3-405	2		1234--789-12345678------------
+L03	60/60	V	L03	"Chưa/Đang phân công"			60	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - - - 7 8 - - - - - - - -	H1-106	2		1234--789-12345678------------
+TN01	7/70	V	TN01				70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - 4 5 - - - - - - - - - - -	C4-301	1		1234--789-12345678------------
+3		CO5097	Cơ sở Toán cho Khoa Học Máy Tính	3.0		
+4		CO5175	Học máy và Ứng dụng	3.0		
+5		EE5317	Số học máy tính: Giải thuật và thiết kế phần cứng	3.0		
+6		ME2117	Thí nghiệm cơ học máy	1.0		
+7		ME2101	Cơ học máy	3.0		
+Phiếu đăng ký
+ (HK252_D3) Đăng ký bổ sung môn học học kỳ 2/2025-2026 đợt 3 và Kết quả đợt 2 (Sinh viên - Học viên) và Anh văn nhu cầu
+ Danh sách đã đăng ký
+1CO3117 - Học máy3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC01	80/80	V	CC01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- 2 3 - - - - - - - - - - - - -	C5-401	1		1234--789-12345678------------
+2CO3061 - Nhập môn trítuệ nhân tạo3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC02	60/60	V	CC02	"Chưa/Đang phân công"			60	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - 4 5 - - - - - - - - - - -	B4-403	1		1234--789-12345678------------
+3CO2001 - Kỹnăng chnghiệp cho kỹsư3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC01	25/80	V	CC01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- 2 3 - - - - - - - - - - - - -	B8-303	1		1234--789-12345678------------
+4SA0004 - Sinh hoạt sinh viên định kỳ0.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+A03	800/800	V	A03				800	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 4	- - - - - - - 8 9 - - - - - - -	A5-HTA5	1		----------1-------------------
+5CO3107 - T/tập ĐAMH đa ngành-ttnt1.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC01	183/9000	V	CC01				9000	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Chưa biết	--	------	1		1234--789-12345678------------
+6CO3005 - Ng/lý ngôn ngữ lập trình4.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC03	60/60	V	CC03				60	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - 4 5 6 - - - - - - - - - -	C5-401	1		1234--789-12345678------------
+7GE1013 - Khoa học trái đất4.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC01_CC01	35/35	V	CC01		CC01		70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 4	- - - 4 5 - - - - - - - - - - -	B1-211	1		1234--789----45678901---------
+Chưa biết	--	------	1		1234--789----45678901---------
