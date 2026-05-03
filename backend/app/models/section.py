@@ -21,5 +21,5 @@ class Section(Base):
         code = self.section_code.upper()
         if code.startswith("CC"): return "HIGH_QUALITY"
         if code.startswith("TN"): return "TALENT"
-        if code.startswith("P"): return "PFIEV"
+        if code.startswith("P") or code.startswith("VP"): return "PFIEV"
         return "STANDARD" # Covers A, L, etc.

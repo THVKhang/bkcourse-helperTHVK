@@ -443,12 +443,25 @@ def _build_plan(
 
 def generate_options(
     db: Session, req: ScheduleGenerateRequest
-) -> Tuple[List[ScheduleOption], Dict[str, List[ScheduleItem]]]:
+) -> Tuple[List[ScheduleOption], Dict[str, List[ScheduleItem]], List[str]]:
     sections_per_subject = _load_sections_for_subjects(
         db, req.student_code, req.term_code, req.subject_ids, req.program_type
     )
+
+    global_warnings = []
+    missing_subjs = [sid for sid in req.subject_ids if sid not in sections_per_subject]
+    if missing_subjs:
+        program_labels = {
+            "STANDARD": "Đại trà (A, L)",
+            "HIGH_QUALITY": "Chất lượng cao, Tiên tiến (CC)",
+            "TALENT": "Tài năng (TN)",
+            "PFIEV": "Việt - Pháp (P)"
+        }
+        plabel = program_labels.get(req.program_type, req.program_type)
+        global_warnings.append(f"Hệ thống đã bỏ qua môn {', '.join(missing_subjs)} vì không có nhóm lớp nào dành cho hệ {plabel}.")
+
     if not sections_per_subject:
-        return [], {}
+        return [], {}, global_warnings
 
     all_sec_ids = [int(s.section_id) for secs in sections_per_subject.values() for s in secs]
     meet_by_sec = _load_meetings(db, all_sec_ids)

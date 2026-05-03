@@ -75,4 +75,5 @@ export type ScheduleOption = {
 export type ScheduleGenerateResponse = { 
   options: ScheduleOption[];
   alternative_sections: Record<string, ScheduleItem[]>;
+  global_warnings?: string[];
 };

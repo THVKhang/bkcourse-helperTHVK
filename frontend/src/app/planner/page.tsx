@@ -285,12 +285,18 @@ export default function UnifiedPlannerPage() {
       setActiveTab(0);
       if (res.options.length === 0) {
         toast.warning("Không tìm được lịch hợp lệ. Vui lòng giảm số môn hoặc đổi tùy chọn.");
+        if (res.global_warnings && res.global_warnings.length > 0) {
+          res.global_warnings.forEach(w => toast.error(w, { duration: 8000 }));
+        }
       } else {
         if (res.options.some(o => (o.pref_match_pct || 0) === 100)) {
           const confetti = (await import("canvas-confetti")).default;
           confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: ["#0052cc", "#fbbc04", "#34a853"] });
         }
         toast.success(`Tạo được ${res.options.length} phương án!`);
+        if (res.global_warnings && res.global_warnings.length > 0) {
+          res.global_warnings.forEach(w => toast.warning(w, { duration: 8000 }));
+        }
         setStep(2); // Move to results
       }
     } catch (e: any) {

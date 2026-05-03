@@ -61,3 +61,4 @@ class ScheduleGenerateResponse(BaseModel):
         default_factory=dict,
         description="Maps subject_id to all its available sections for drag-and-drop replacement"
     )
+    global_warnings: List[str] = []
