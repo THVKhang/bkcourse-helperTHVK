@@ -415,7 +415,7 @@ function CourseGroup({ label, items, completed, onToggle, isElective }: {
       <div className="divide-y divide-border/50">
         {items.map(it => {
           const done = completed.has(it.subject_id);
-          const unmetPrereqs = (it.prerequisite_ids || []).filter(pid => !completed.has(pid));
+          const unmetPrereqs = (it.prerequisite_ids || []).filter((pid: string) => !completed.has(pid));
           const isLocked = unmetPrereqs.length > 0;
 
           return (
