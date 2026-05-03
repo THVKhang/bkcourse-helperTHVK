@@ -1,0 +1,141 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+1,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+1,PH1005,Vật lý 2,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+1,CH2009,Hóa phân tích,3,BẮT BUỘC,,True
+1,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+1,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+1,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+1,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+1,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+1,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+1,MA1001,Nhập môn Về Kỹ thuật,3,BẮT BUỘC,,True
+1,IM1013,Kinh tế học Đại cương,3,TỰ CHỌN,,False
+1,IM1027,Kinh tế Kỹ thuật,3,TỰ CHỌN,,False
+1,IM3001,Quản trị Kinh doanh cho Kỹ sư,3,TỰ CHỌN,,False
+1,IM1021,Khởi nghiệp,3,TỰ CHỌN,,False
+1,IM1025,Quản lý Dự án cho Kỹ sư,3,TỰ CHỌN,,False
+1,IM1023,Quản lý Sản xuất cho Kỹ sư,3,TỰ CHỌN,,False
+1,ME1019,Quản lý năng suất và chất lượng,3,TỰ CHỌN,,False
+1,IM1031,Khởi nghiệp và đổi mới sáng tạo,3,TỰ CHỌN,,False
+1,MA4123,Phát triển Bền vững và Công nghệ Xử lý Môi trường,3,TỰ CHỌN,,False
+1,LA1003,Anh văn 1,2,TỰ CHỌN,,False
+1,LA1005,Anh văn 2,2,TỰ CHỌN,,False
+1,LA1007,Anh văn 3,2,TỰ CHỌN,,False
+1,LA1009,Anh văn 4,2,TỰ CHỌN,,False
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,MI1003,Giáo dục Quốc phòng,0,Thể dục (Chọn 1),PE,False
+1,CI1003,Vẽ kỹ thuật,3,Thể dục (Chọn 1),PE,False
+1,MA1003,Cơ sở Khoa học Vật liệu,3,Thể dục (Chọn 1),PE,False
+1,MA2033,Vật lý Chất rắn,3,Thể dục (Chọn 1),PE,False
+1,MA2035,Công nghệ Vật liệu,3,Thể dục (Chọn 1),PE,False
+1,MA2037,Hóa lý - Công nghệ Vật liệu,3,Thể dục (Chọn 1),PE,False
+1,MA2043,Cơ sở hóa học vật liệu,3,Thể dục (Chọn 1),PE,False
+1,MA2121,Phương pháp tính toán các quá trình vật liệu,3,Thể dục (Chọn 1),PE,False
+1,MA3101,Truyền nhiệt và Truyền khối,3,Thể dục (Chọn 1),PE,False
+1,MA3083,Cơ học Vật liệu,3,Thể dục (Chọn 1),PE,False
+1,MA4065,Đo lường và Tự động hóa,3,Thể dục (Chọn 1),PE,False
+1,MA3161,Khoa học và công nghệ vật liệu polyme,3,BẮT BUỘC,,True
+1,MA3163,Công nghệ vật liệu ceramic từ cơ bản đến hiện đại,3,BẮT BUỘC,,True
+1,MA3159,Mô phỏng trong kỹ thuật vật liệu,3,BẮT BUỘC,,True
+1,MA3165,Vật liệu kim loaị và các quá trình công nghệ,3,BẮT BUỘC,,True
+1,MA3171,Phương pháp phân tích và đánh giá vật liệu,3,BẮT BUỘC,,True
+1,MA4181,Vật liệu & Công nghệ nano,3,BẮT BUỘC,,True
+1,MA4183,Vật liệu và Công nghệ Bán dẫn,4,BẮT BUỘC,,True
+1,MA4185,Vật liệu sinh học và ứng dụng,3,TỰ CHỌN,,False
+1,MA4187,Vật liệu và công nghệ in 3D,3,TỰ CHỌN,,False
+1,MA4189,Vật liệu thông minh và đa chức năng,3,TỰ CHỌN,,False
+1,MA4191,Vật liệu ứng dụng cho công nghệ năng lượng bền vững,3,TỰ CHỌN,,False
+1,MA3103,Kim loại học và Nhiệt luyện,4,BẮT BUỘC,,True
+1,MA3105,Luyện kim đen,3,BẮT BUỘC,,True
+1,MA3107,"Các Phương pháp Phân tích và Đánh giá Vật liệu: Tổ Chức, Thành phần Hóa, Pha",3,BẮT BUỘC,,True
+1,MA3095,Lý Thuyết và Công nghệ đúc,4,BẮT BUỘC,,True
+1,MA3109,Thí nghiệm Đúc,1,BẮT BUỘC,,True
+1,MA4103,Luyện kim màu,3,BẮT BUỘC,,True
+1,MA4125,Tạo hình Kim loại,4,BẮT BUỘC,,True
+1,MA4127,Công nghệ Nhiệt luyện,3,TỰ CHỌN NHÓM C,C,False
+1,MA3097,Nhiễu xạ Tia X trong Nghiên cứu Cấu trúc Vật liệu,3,TỰ CHỌN NHÓM C,C,False
+1,MA4105,Công nghệ kim loại bột,3,TỰ CHỌN NHÓM C,C,False
+1,MA4107,Ăn mòn và phá hủy trong vật liệu kim loại,3,TỰ CHỌN NHÓM C,C,False
+1,MA4129,Công nghệ phun phủ kim loại,3,TỰ CHỌN NHÓM C,C,False
+1,MA3021,Nguyên lý Lò công nghiệp,3,TỰ CHỌN NHÓM C,C,False
+1,MA4109,Đúc liên tục,3,TỰ CHỌN NHÓM C,C,False
+1,MA4047,Thiết kế Đúc,3,TỰ CHỌN NHÓM C,C,False
+1,MA4131,Điện hóa kim loại,3,TỰ CHỌN NHÓM C,C,False
+1,MA4133,Lý thuyết và công nghệ biến dạng dẻo,3,TỰ CHỌN NHÓM C,C,False
+1,MA4179,Lựa chọn và Sử dụng Vật liệu Kỹ thuật,3,TỰ CHỌN NHÓM C,C,False
+1,MA2013,Các nguồn Năng lượng Tái tạo,3,BẮT BUỘC,,True
+1,MA2011,Điện hóa học,3,BẮT BUỘC,,True
+1,MA3007,Phương pháp Đánh giá Vật liệu,3,BẮT BUỘC,,True
+1,MA3011,Hóa học Xúc tác,3,BẮT BUỘC,,True
+1,MA3149,Thí nghiệm Chế tạo các hệ Năng lượng,1,BẮT BUỘC,,True
+1,MA3099,Thí nghiệm Điện hóa học,2,BẮT BUỘC,,True
+1,MA3031,Vật liệu Chuyển hóa và Tồn trữ Năng lượng,3,BẮT BUỘC,,True
+1,MA4111,Thí nghiệm Phân tích Hóa lý,1,BẮT BUỘC,,True
+1,MA4113,Vật liệu Tiên tiến trong các Hệ năng lượng,3,BẮT BUỘC,,True
+1,MA3091,Công nghệ Chế tạo các hệ Năng lượng,4,TỰ CHỌN NHÓM C,C,False
+1,MA4115,Các phương pháp gia công vật liệu,3,TỰ CHỌN NHÓM C,C,False
+1,MA4117,Polyme dẫn điện,3,TỰ CHỌN NHÓM C,C,False
+1,MA4119,Vật liệu và Công nghệ Quang khắc,3,TỰ CHỌN NHÓM C,C,False
+1,MA4121,Kỹ thuật Tính toán và Mô phỏng,3,TỰ CHỌN NHÓM C,C,False
+1,MA2007,Hóa học Polyme,3,BẮT BUỘC,,True
+1,MA2015,Hóa lý Polymer,3,BẮT BUỘC,,True
+1,MA3121,Thí nghiệm Hóa học Polyme,1,BẮT BUỘC,,True
+1,MA3123,Thí nghiệm Hóa lý Polyme,1,BẮT BUỘC,,True
+1,MA3009,Công nghệ Cao su,4,BẮT BUỘC,,True
+1,MA3019,Kỹ thuật Sản xuất các chất Cao phân tử,3,BẮT BUỘC,,True
+1,MA4067,Kỹ thuật Gia công Polyme,4,BẮT BUỘC,,True
+1,MA4069,Các Tính chất của Vật liệu Polyme,3,BẮT BUỘC,,True
+1,MA4079,Công nghệ Các chất Tạo màng,3,TỰ CHỌN NHÓM C,C,False
+1,MA4081,Vật liệu polyme có tính năng đặc biệt,3,TỰ CHỌN NHÓM C,C,False
+1,MA4083,Vật liệu Polymer Composite,3,TỰ CHỌN NHÓM C,C,False
+1,MA4085,Polyme Blend,3,TỰ CHỌN NHÓM C,C,False
+1,MA3167,Hóa lý silicat,4,BẮT BUỘC,,True
+1,MA3169,Thực hành hóa lý silicat,1,BẮT BUỘC,,True
+1,MA3089,"Quá trình và Thiết bị Cơ, Nhiệt",4,BẮT BUỘC,,True
+1,MA3093,Công nghệ Gốm sứ,3,BẮT BUỘC,,True
+1,MA3035,Thí nghiệm Silicat đại cương,1,BẮT BUỘC,,True
+1,MA3039,Kỹ thuật Sản xuất các Sản phẩm Thủy tinh,3,BẮT BUỘC,,True
+1,MA3051,Thí nghiệm Silicat Chuyên ngành,2,BẮT BUỘC,,True
+1,MA4087,"Công nghệ Xi-măng, Bê tông",4,BẮT BUỘC,,True
+1,MA2005,Hóa học chất rắn,3,TỰ CHỌN NHÓM C,C,False
+1,MA4025,"Công nghệ Sản xuất Gạch Ốp, Lát - Sứ vệ sinh",3,TỰ CHỌN NHÓM C,C,False
+1,MA4033,Vật liệu Y sinh,3,TỰ CHỌN NHÓM C,C,False
+1,MA4089,"Vật liệu gốm kỹ thuật điện, điện tử",3,TỰ CHỌN NHÓM C,C,False
+1,MA4091,Vật liệu Môi trường,3,TỰ CHỌN NHÓM C,C,False
+1,MA4093,Kỹ thuật sản xuất vật liệu chịu lửa,3,TỰ CHỌN NHÓM C,C,False
+1,MA4095,"Phụ gia công nghệ xi-măng, bê tông",3,TỰ CHỌN NHÓM C,C,False
+1,MA4097,Lớp phủ ceramic,3,TỰ CHỌN NHÓM C,C,False
+1,MA4177,Các phương pháp phân tích vật liệu,3,TỰ CHỌN NHÓM C,C,False
+1,MA3325,Thực tập Ngoài trường,2,TỰ CHỌN NHÓM C,C,False
+1,MA4071,Đồ án Chuyên ngành,2,TỰ CHỌN NHÓM C,C,False
+1,MA4327,Đồ án Tốt nghiệp,4,TỰ CHỌN NHÓM C,C,False
+1,SA4001,Hoạt động sinh viên,0,TỰ CHỌN TỰ DO,FREE,False

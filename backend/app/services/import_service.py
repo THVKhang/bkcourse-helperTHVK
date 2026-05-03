@@ -11,6 +11,18 @@ from app.services.student_service import get_or_create_student
 def paste_import(db: Session, req: PasteImportRequest) -> PasteImportResponse:
     student = get_or_create_student(db, req.student_code)
     sections, issues, parsed_subjects = parse_portal_text(req.raw_text)
+    
+    from app.models import Prerequisite
+    subj_ids = [ps.subject_id for ps in parsed_subjects]
+    prereqs = db.execute(select(Prerequisite).where(Prerequisite.subject_id.in_(subj_ids))).scalars().all()
+    prereqs_by_subj = {}
+    for pq in prereqs:
+        if pq.subject_id not in prereqs_by_subj:
+            prereqs_by_subj[pq.subject_id] = []
+        prereqs_by_subj[pq.subject_id].append(pq.prereq_subject_id)
+        
+    for ps in parsed_subjects:
+        ps.prerequisite_ids = prereqs_by_subj.get(ps.subject_id, [])
 
     # Upsert subjects to ensure we have the correct credits and names
     for ps in parsed_subjects:
@@ -73,7 +85,7 @@ def paste_import(db: Session, req: PasteImportRequest) -> PasteImportResponse:
                 warnings=None,
             ))
     db.commit()
-    return PasteImportResponse(import_id=int(imp.import_id), sections=sections, issues=issues)
+    return PasteImportResponse(import_id=int(imp.import_id), subjects=parsed_subjects, sections=sections, issues=issues)
 
 def get_import(db: Session, import_id: int) -> dict:
     imp = db.get(TermImport, import_id)

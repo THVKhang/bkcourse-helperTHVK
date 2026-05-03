@@ -1,0 +1,147 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,CO1005,Nhập môn điện toán,3,BẮT BUỘC,,True
+1,CO1023,Hệ thống số,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+2,CO1007,Cấu trúc rời rạc cho khoa học máy tính,4,BẮT BUỘC,,True
+2,CO1027,Kỹ thuật lập trình,3,BẮT BUỘC,,True
+2,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+3,CO2007,Kiến trúc máy tính,4,BẮT BUỘC,,True
+3,CO2011,Mô hình hóa toán học,3,BẮT BUỘC,,True
+3,CO2003,Cấu trúc dữ liệu và giải thuật,4,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,SP1033,Kinh tế chính trị Mác - Lênin,2,BẮT BUỘC,,True
+4,CO2017,Hệ điều hành,3,BẮT BUỘC,,True
+4,CO2039,Lập trình nâng cao,3,BẮT BUỘC,,True
+4,MT2013,Xác suất và thống kê,4,BẮT BUỘC,,True
+5,SP1035,Chủ nghĩa xã hội khoa học,2,BẮT BUỘC,,True
+5,CO3093,Mạng máy tính,3,BẮT BUỘC,,True
+5,CO2013,Hệ cơ sở dữ liệu,4,BẮT BUỘC,,True
+5,CO3001,Công nghệ phần mềm,3,BẮT BUỘC,,True
+5,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+5,CO3101,Đồ án tổng hợp - hướng trí tuệ nhân tạo,1,TỰ CHỌN NHÓM A,A,False
+5,CO3103,Đồ án tổng hợp - hướng công nghệ phần mềm,1,TỰ CHỌN NHÓM A,A,False
+5,CO3105,Đồ án tổng hợp - hướng hệ thống thông tin,1,TỰ CHỌN NHÓM A,A,False
+5,CO3127,Đồ án tổng hợp - hướng kỹ thuật dữ liệu,1,TỰ CHỌN NHÓM A,A,False
+5,CO3119,Đồ án mạng máy tính,1,TỰ CHỌN NHÓM A,A,False
+6,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+6,CO2001,Kỹ năng chuyên nghiệp cho kỹ sư,3,BẮT BUỘC,,True
+6,CO3005,Nguyên lý ngôn ngữ lập trình,4,BẮT BUỘC,,True
+6,CO3335,Thực tập ngoài trường,2,BẮT BUỘC,,True
+6,CO3107,Thực tập đồ án môn học đa ngành - hướng trí tuệ nhân tạo,1,TỰ CHỌN NHÓM B,B,False
+6,CO3109,Thực tập đồ án môn học đa ngành - hướng công nghệ phần mềm,1,TỰ CHỌN NHÓM B,B,False
+6,CO3111,Thực tập đồ án môn học đa ngành - hướng hệ thống thông tin,1,TỰ CHỌN NHÓM B,B,False
+7,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+7,CO4029,Đồ án chuyên ngành,2,BẮT BUỘC,,True
+7,CO3011,Quản lý dự án phần mềm,3,TỰ CHỌN NHÓM C,C,False
+7,CO3015,Kiểm tra phần mềm,3,TỰ CHỌN NHÓM C,C,False
+7,CO3017,Kiến trúc phần mềm,3,TỰ CHỌN NHÓM C,C,False
+7,CO3021,Hệ quản trị cơ sở dữ liệu,3,TỰ CHỌN NHÓM C,C,False
+7,CO3027,Thương mại điện tử,3,TỰ CHỌN NHÓM C,C,False
+7,CO3029,Khai phá dữ liệu,3,TỰ CHỌN NHÓM C,C,False
+7,CO3033,Bảo mật hệ thống thông tin,3,TỰ CHỌN NHÓM C,C,False
+7,CO3037,Phát triển ứng dụng internet of things,3,TỰ CHỌN NHÓM C,C,False
+7,CO3041,Hệ thống thông minh,3,TỰ CHỌN NHÓM C,C,False
+7,CO3043,Phát triển ứng dụng trên thiết bị di động,3,TỰ CHỌN NHÓM C,C,False
+7,CO3045,Lập trình game,3,TỰ CHỌN NHÓM C,C,False
+7,CO3049,Lập trình web,3,TỰ CHỌN NHÓM C,C,False
+7,CO3051,Hệ thống thiết bị di động,3,TỰ CHỌN NHÓM C,C,False
+7,CO3057,Xử lý ảnh số và thị giác máy tính,3,TỰ CHỌN NHÓM C,C,False
+7,CO3059,Đồ họa máy tính,3,TỰ CHỌN NHÓM C,C,False
+7,CO3061,Nhập môn trí tuệ nhân tạo,3,TỰ CHỌN NHÓM C,C,False
+7,CO3065,Công nghệ phần mềm nâng cao,3,TỰ CHỌN NHÓM C,C,False
+7,CO3067,Tính toán song song,3,TỰ CHỌN NHÓM C,C,False
+7,CO3069,Mật mã và an ninh mạng,3,TỰ CHỌN NHÓM C,C,False
+7,CO3085,Xử lý ngôn ngữ tự nhiên,3,TỰ CHỌN NHÓM C,C,False
+7,CO3089,Những chủ đề nâng cao trong khoa học máy tính,3,TỰ CHỌN NHÓM C,C,False
+7,CO3115,Phân tích và thiết kế hệ thống,3,TỰ CHỌN NHÓM C,C,False
+7,CO3117,Học máy,3,TỰ CHỌN NHÓM C,C,False
+7,CO3129,Bảo mật Phần mềm,3,TỰ CHỌN NHÓM C,C,False
+7,CO3131,Công nghệ Phần mềm thế hệ mới,3,TỰ CHỌN NHÓM C,C,False
+7,CO3133,Học sâu và Ứng dụng,3,TỰ CHỌN NHÓM C,C,False
+7,CO3135,Lập trình cho Trí tuệ nhân tạo và Khoa học dữ liệu,3,TỰ CHỌN NHÓM C,C,False
+7,CO3137,Dữ liệu lớn,3,TỰ CHỌN NHÓM C,C,False
+7,CO3139,Chuyển đổi số,3,TỰ CHỌN NHÓM C,C,False
+7,CO3151,Quản trị mạng,3,TỰ CHỌN NHÓM C,C,False
+7,CO3153,Đánh giá an toàn mạng máy tính,3,TỰ CHỌN NHÓM C,C,False
+7,CO4031,Kho dữ liệu và hệ hỗ trợ quyết định,3,TỰ CHỌN NHÓM C,C,False
+7,CO4033,Phân tích dữ liệu lớn và trí tuệ kinh doanh,3,TỰ CHỌN NHÓM C,C,False
+7,CO4035,Hệ hoạch định tài nguyên tổ chức,3,TỰ CHỌN NHÓM C,C,False
+7,CO4037,Hệ thống thông tin quản lý,3,TỰ CHỌN NHÓM C,C,False
+7,CO4039,Bảo mật sinh trắc,3,TỰ CHỌN NHÓM C,C,False
+7,IM1013,Kinh tế học đại cương,3,TỰ CHỌN,,False
+7,IM1023,Quản lý sản xuất cho kỹ sư,3,TỰ CHỌN,,False
+7,IM1025,Quản lý dự án cho kỹ sư,0,TỰ CHỌN,,False
+7,IM1027,Kinh tế kỹ thuật,3,TỰ CHỌN,,False
+7,IM3001,Quản trị kinh doanh cho kỹ sư,3,TỰ CHỌN,,False
+7,IM1031,Khởi nghiệp và Đổi mới sáng tạo,3,TỰ CHỌN,,False
+7,ME1019,Quản lý năng suất và chất lượng,3,TỰ CHỌN,,False
+8,SP1007,Pháp luật Việt Nam đại cương,2,BẮT BUỘC,,True
+8,CO4337,Đồ án tốt nghiệp (Khoa học Máy tính),4,BẮT BUỘC,,True
+8,CO3011,Quản lý dự án phần mềm,3,TỰ CHỌN NHÓM C,C,False
+8,CO3015,Kiểm tra phần mềm,3,TỰ CHỌN NHÓM C,C,False
+8,CO3017,Kiến trúc phần mềm,3,TỰ CHỌN NHÓM C,C,False
+8,CO3021,Hệ quản trị cơ sở dữ liệu,3,TỰ CHỌN NHÓM C,C,False
+8,CO3027,Thương mại điện tử,3,TỰ CHỌN NHÓM C,C,False
+8,CO3029,Khai phá dữ liệu,3,TỰ CHỌN NHÓM C,C,False
+8,CO3033,Bảo mật hệ thống thông tin,3,TỰ CHỌN NHÓM C,C,False
+8,CO3037,Phát triển ứng dụng internet of things,3,TỰ CHỌN NHÓM C,C,False
+8,CO3041,Hệ thống thông minh,3,TỰ CHỌN NHÓM C,C,False
+8,CO3043,Phát triển ứng dụng trên thiết bị di động,3,TỰ CHỌN NHÓM C,C,False
+8,CO3045,Lập trình game,3,TỰ CHỌN NHÓM C,C,False
+8,CO3049,Lập trình web,3,TỰ CHỌN NHÓM C,C,False
+8,CO3051,Hệ thống thiết bị di động,3,TỰ CHỌN NHÓM C,C,False
+8,CO3057,Xử lý ảnh số và thị giác máy tính,3,TỰ CHỌN NHÓM C,C,False
+8,CO3059,Đồ họa máy tính,3,TỰ CHỌN NHÓM C,C,False
+8,CO3061,Nhập môn trí tuệ nhân tạo,3,TỰ CHỌN NHÓM C,C,False
+8,CO3065,Công nghệ phần mềm nâng cao,3,TỰ CHỌN NHÓM C,C,False
+8,CO3067,Tính toán song song,3,TỰ CHỌN NHÓM C,C,False
+8,CO3069,Mật mã và an ninh mạng,3,TỰ CHỌN NHÓM C,C,False
+8,CO3085,Xử lý ngôn ngữ tự nhiên,3,TỰ CHỌN NHÓM C,C,False
+8,CO3089,Những chủ đề nâng cao trong khoa học máy tính,3,TỰ CHỌN NHÓM C,C,False
+8,CO3115,Phân tích và thiết kế hệ thống,3,TỰ CHỌN NHÓM C,C,False
+8,CO3117,Học máy,3,TỰ CHỌN NHÓM C,C,False
+8,CO3129,Bảo mật Phần mềm,3,TỰ CHỌN NHÓM C,C,False
+8,CO3131,Công nghệ Phần mềm thế hệ mới,3,TỰ CHỌN NHÓM C,C,False
+8,CO3133,Học sâu và Ứng dụng,3,TỰ CHỌN NHÓM C,C,False
+8,CO3135,Lập trình cho Trí tuệ nhân tạo và Khoa học dữ liệu,3,TỰ CHỌN NHÓM C,C,False
+8,CO3137,Dữ liệu lớn,3,TỰ CHỌN NHÓM C,C,False
+8,CO3139,Chuyển đổi số,3,TỰ CHỌN NHÓM C,C,False
+8,CO3151,Quản trị mạng,3,TỰ CHỌN NHÓM C,C,False
+8,CO3153,Đánh giá an toàn mạng máy tính,3,TỰ CHỌN NHÓM C,C,False
+8,CO4031,Kho dữ liệu và hệ hỗ trợ quyết định,3,TỰ CHỌN NHÓM C,C,False
+8,CO4033,Phân tích dữ liệu lớn và trí tuệ kinh doanh,3,TỰ CHỌN NHÓM C,C,False
+8,CO4035,Hệ hoạch định tài nguyên tổ chức,3,TỰ CHỌN NHÓM C,C,False
+8,CO4037,Hệ thống thông tin quản lý,3,TỰ CHỌN NHÓM C,C,False
+8,CO4039,Bảo mật sinh trắc,3,TỰ CHỌN NHÓM C,C,False

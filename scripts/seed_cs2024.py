@@ -2,7 +2,7 @@ import os, sys
 from dotenv import load_dotenv
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
-load_dotenv(os.path.join(os.path.dirname(__file__), 'backend', '.env'))
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 from sqlalchemy.orm import Session
 from app.db.session import SessionLocal
@@ -146,51 +146,58 @@ def seed():
     for row in curriculum:
         subj_id, subj_name, credits, sem, ctype, group, is_req = row
 
-        # Upsert subject
-        subj = db.query(Subject).filter_by(subject_id=subj_id).first()
-        if not subj:
-            subj = Subject(subject_id=subj_id, subject_name=subj_name, credits=credits)
-            db.add(subj)
-        else:
-            subj.subject_name = subj_name
-            subj.credits = credits
+        try:
+            # Upsert subject
+            subj = db.query(Subject).filter_by(subject_id=subj_id).first()
+            if not subj:
+                subj = Subject(subject_id=subj_id, subject_name=subj_name, credits=credits)
+                db.add(subj)
+                db.flush()
+            else:
+                subj.subject_name = subj_name
+                subj.credits = credits
 
-        # Upsert program_course
-        pc = db.query(ProgramCourse).filter_by(program_id=program_id, subject_id=subj_id).first()
-        if not pc:
-            pc = ProgramCourse(
-                program_id=program_id, subject_id=subj_id,
-                course_type=ctype, elective_group=group,
-                recommended_semester=sem, is_summer_friendly=(credits <= 2)
-            )
-            db.add(pc)
-        else:
-            pc.course_type = ctype
-            pc.elective_group = group
-            pc.recommended_semester = sem
+            # Upsert program_course
+            pc = db.query(ProgramCourse).filter_by(program_id=program_id, subject_id=subj_id).first()
+            if not pc:
+                pc = ProgramCourse(
+                    program_id=program_id, subject_id=subj_id,
+                    course_type=ctype, elective_group=group,
+                    recommended_semester=sem, is_summer_friendly=(credits <= 2)
+                )
+                db.add(pc)
+                db.flush()
+            else:
+                pc.course_type = ctype
+                pc.elective_group = group
+                pc.recommended_semester = sem
 
-        # Upsert semester_plan (THIS WAS MISSING BEFORE!)
-        sp = db.query(SemesterPlan).filter_by(
-            program_id=program_id, semester_no=sem, subject_id=subj_id
-        ).first()
-        if not sp:
-            sp = SemesterPlan(
-                program_id=program_id,
-                semester_no=sem,
-                subject_id=subj_id,
-                priority=10 if is_req else 50,
-                is_required=is_req,
-            )
-            db.add(sp)
-        else:
-            sp.priority = 10 if is_req else 50
-            sp.is_required = is_req
+            # Upsert semester_plan (THIS WAS MISSING BEFORE!)
+            sp = db.query(SemesterPlan).filter_by(
+                program_id=program_id, semester_no=sem, subject_id=subj_id
+            ).first()
+            if not sp:
+                sp = SemesterPlan(
+                    program_id=program_id,
+                    semester_no=sem,
+                    subject_id=subj_id,
+                    priority=10 if is_req else 50,
+                    is_required=is_req,
+                )
+                db.add(sp)
+                db.flush()
+            else:
+                sp.priority = 10 if is_req else 50
+                sp.is_required = is_req
 
-        count += 1
+            db.commit()
+            count += 1
+        except Exception as e:
+            db.rollback()
+            print(f"  ⚠ Skipping {subj_id}: {e}")
 
-    db.commit()
     db.close()
-    print(f"Seeded {count} items into subjects + program_courses + semester_plan.")
+    print(f"[OK] Seeded {count} items into subjects + program_courses + semester_plan.")
 
 if __name__ == "__main__":
     seed()

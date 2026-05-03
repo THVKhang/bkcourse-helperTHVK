@@ -20,6 +20,14 @@ def get_program_plan(db: Session, program_id: int):
     subjects = db.execute(select(Subject).where(Subject.subject_id.in_(subj_ids))).scalars().all()
     subj_by_id = {s.subject_id: s for s in subjects}
 
+    from app.models import Prerequisite
+    prereqs = db.execute(select(Prerequisite).where(Prerequisite.subject_id.in_(subj_ids))).scalars().all()
+    prereqs_by_subj = {}
+    for pq in prereqs:
+        if pq.subject_id not in prereqs_by_subj:
+            prereqs_by_subj[pq.subject_id] = []
+        prereqs_by_subj[pq.subject_id].append(pq.prereq_subject_id)
+
     items = []
     for p in sorted(plan, key=lambda x: (x.semester_no, x.priority, x.subject_id)):
         subj = subj_by_id.get(p.subject_id)
@@ -32,5 +40,6 @@ def get_program_plan(db: Session, program_id: int):
             "course_type": type_by_id.get(p.subject_id),
             "priority": p.priority,
             "is_required": p.is_required,
+            "prerequisite_ids": prereqs_by_subj.get(p.subject_id, []),
         })
     return program, items

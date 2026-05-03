@@ -1,0 +1,13 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,LA1003,Anh văn 1 English 1,2,BẮT BUỘC,,True
+1,MT1007,Đại số tuyến tính Linear Algebra,3,BẮT BUỘC,,True
+1,MT1003,Giải tích 1 Calculus 1,4,BẮT BUỘC,,True
+1,PH1003,Vật lý 1 General Physics 1,4,BẮT BUỘC,,True
+1,PH1007,Thí nghiệm vật lý General Physics Labs,1,BẮT BUỘC,,True
+1,EE1001,Nhập môn về kỹ thuật Introduction to Electrical and Electronics Engineering,3,BẮT BUỘC,,True
+2,LA1005,Anh văn 2 English 2,2,BẮT BUỘC,,True
+2,MT1005,Giải tích 2 Calculus 2,4,BẮT BUỘC,,True
+2,EE1007,Vật lý bán dẫn Semiconductor Physics,4,BẮT BUỘC,,True
+2,MT1009,Phương pháp tính Numerical Methods,3,BẮT BUỘC,,True
+2,CH1003,Hóa đại cương General Chemistry,3,BẮT BUỘC,,True
+2,MI1003,,0,Thể dục (Chọn 1),PE,False

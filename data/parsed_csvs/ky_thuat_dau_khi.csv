@@ -1,0 +1,75 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,GE1001,Nhập môn về Kỹ thuật,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+2,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+2,GE1013,Khoa học Trái đất,4,BẮT BUỘC,,True
+2,GE1029,Sức khỏe An toàn Môi trường,3,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+3,GE2051,Cơ sở khoa học địa chất dầu khí và ngành dầu khí,3,BẮT BUỘC,,True
+3,GE2001,Cơ sở Kỹ thuật Dầu khí,3,BẮT BUỘC,,True
+3,GE1027,Khoa học dữ liệu,3,BẮT BUỘC,,True
+3,GE2053,Nhiệt động học vỉa và tính chất chất lưu,3,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+4,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+4,GE2061,Trầm tích học và nhịp địa tầng,3,BẮT BUỘC,,True
+4,GE2063,Kỹ thuật khoan dầu khí,3,BẮT BUỘC,,True
+4,GE2059,Địa chất kiến trúc và các phương pháp địa chấn,3,BẮT BUỘC,,True
+5,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+5,GE3017,Kỹ thuật Vỉa dầu khí,3,BẮT BUỘC,,True
+5,GE3219,Hoàn thiện và kích thích giếng,3,BẮT BUỘC,,True
+5,GE3215,Địa thống kê ứng dụng,3,BẮT BUỘC,,True
+5,GE3205,Cơ học đá Dầu khí,3,BẮT BUỘC,,True
+5,GE2055,Địa vật lý dầu khí và đánh giá thành hệ,3,BẮT BUỘC,,True
+5,GE2057,Đồ án tổng quan về địa năng lượng,1,BẮT BUỘC,,True
+6,GE1025,Kỹ thuật hệ thống và thực tiễn công nghiệp,3,BẮT BUỘC,,True
+6,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+6,GE3217,Kỹ thuật khai thác dầu khí,3,BẮT BUỘC,,True
+6,GE3105,Đặc trưng Hóa và Mô hình Hóa vỉa,3,BẮT BUỘC,,True
+6,GE3345,Thực tập Ngoài trường,2,BẮT BUỘC,,True
+7,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+7,GE4091,Mô phỏng Vỉa dầu khí,3,BẮT BUỘC,,True
+7,GE4145,Thử vỉa và phân tích áp suất chuyển tiếp,3,BẮT BUỘC,,True
+7,GE4141,Đồ án Chuyên ngành,2,BẮT BUỘC,,True
+7,GE3223,Các quá trình vận chuyển và chế biến dầu khí,3,TỰ CHỌN NHÓM A,A,False
+7,GE3221,Tổn hại thành hệ và cải thiện năng suất khai thác,3,TỰ CHỌN NHÓM A,A,False
+8,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+8,GE4153,Quản lý dự án và vỉa dầu khí tích hợp,3,BẮT BUỘC,,True
+8,GE4347,Đồ án Tốt nghiệp,4,BẮT BUỘC,,True
+8,GE4147,Các nguồn tài nguyên phi truyền thống và phương pháp khai thác,3,TỰ CHỌN NHÓM B,B,False
+8,GE4149,Thu hồi lưu trữ carbon trong thành hệ địa chất,3,TỰ CHỌN NHÓM B,B,False
+8,GE4151,Năng lượng bền vững,3,TỰ CHỌN NHÓM B,B,False
+8,ME1019,Quản lý năng suất và chất lượng,3,TỰ CHỌN NHÓM B,B,False
+8,IM1031,Khởi nghiệp và đổi mới sáng tạo,3,TỰ CHỌN NHÓM B,B,False

@@ -7,6 +7,7 @@ class ProgramOut(BaseModel):
     name: str
     cohort_year: int
     total_credits: int | None = None
+    faculty: str | None = None
 
 class SemesterPlanItem(BaseModel):
     semester_no: int
@@ -17,6 +18,7 @@ class SemesterPlanItem(BaseModel):
     course_type: str | None = None
     priority: int | None = None
     is_required: bool | None = None
+    prerequisite_ids: List[str] = []
 
 class ProgramPlanResponse(BaseModel):
     program: ProgramOut

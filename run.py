@@ -30,7 +30,10 @@ def cleanup(*_):
     print("\n🛑 Đang dừng servers...")
     for p in processes:
         try:
-            p.terminate()
+            if sys.platform == "win32":
+                subprocess.call(['taskkill', '/F', '/T', '/PID', str(p.pid)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            else:
+                p.terminate()
         except Exception:
             pass
     sys.exit(0)
@@ -69,11 +72,23 @@ if __name__ == "__main__":
         while True:
             # Check if either process died
             if backend.poll() is not None:
-                print("⚠️  Backend đã dừng! Exit code:", backend.returncode)
-                break
+                print("⚠️  Backend đã dừng! Tự động khởi động lại sau 2s...")
+                time.sleep(2)
+                backend = subprocess.Popen(
+                    [VENV_PYTHON, "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
+                    cwd=BACKEND_DIR,
+                )
+                processes[0] = backend
+
             if frontend.poll() is not None:
-                print("⚠️  Frontend đã dừng! Exit code:", frontend.returncode)
-                break
+                print("⚠️  Frontend đã dừng! Tự động khởi động lại sau 2s...")
+                time.sleep(2)
+                frontend = subprocess.Popen(
+                    [npm_cmd, "run", "dev"],
+                    cwd=FRONTEND_DIR,
+                )
+                processes[1] = frontend
+            
             time.sleep(1)
     except KeyboardInterrupt:
         pass

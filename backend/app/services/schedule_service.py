@@ -1,6 +1,6 @@
 from __future__ import annotations
 import logging
-from itertools import product
+import random
 from typing import List, Dict, Set, Tuple
 
 logger = logging.getLogger(__name__)
@@ -18,7 +18,7 @@ from app.services.student_service import get_or_create_student
 # ---- helpers ----
 
 def _load_sections_for_subjects(
-    db: Session, student_code: str, term_code: str, subject_ids: List[str]
+    db: Session, student_code: str, term_code: str, subject_ids: List[str], program_type: str = "STANDARD"
 ) -> Dict[str, List[Section]]:
     """Get all sections per subject from ALL of the student's imports for the term."""
     student = get_or_create_student(db, student_code)
@@ -38,6 +38,9 @@ def _load_sections_for_subjects(
     seen = set()
     by_subj: Dict[str, List[Section]] = {}
     for s in sections:
+        # Strict program type filtering
+        if s.class_type != program_type:
+            continue
         key = (s.subject_id, s.section_code)
         if key in seen:
             continue
@@ -89,11 +92,44 @@ def _infer_campus(m: SectionMeeting) -> str | None:
     return None
 
 
-def _has_conflict_with(new_slots: List[MeetingSlot], existing: List[MeetingSlot]) -> bool:
-    for ns in new_slots:
-        for es in existing:
-            if ns.day_of_week == es.day_of_week:
-                if not (ns.end_period <= es.start_period or es.end_period <= ns.start_period):
+# ---- Study-Weeks Aware Conflict Detection ----
+
+def _get_study_weeks(m: SectionMeeting) -> List[int]:
+    """Extract study_weeks list from a meeting, or empty list if unavailable."""
+    if isinstance(m.study_weeks, list):
+        return m.study_weeks
+    return []
+
+
+def _weeks_overlap(w1: List[int], w2: List[int]) -> bool:
+    """Check if two study_weeks lists have any overlapping weeks.
+    If either list is empty, assume they overlap (safe default)."""
+    if not w1 or not w2:
+        return True  # No data → assume overlap (conservative)
+    return bool(set(w1) & set(w2))
+
+
+def _has_conflict_with(
+    new_meets: List[SectionMeeting],
+    existing_meets: List[SectionMeeting],
+) -> bool:
+    """Check time conflicts between new meetings and existing ones.
+    Uses study_weeks to avoid false positives: if two meetings are on the same
+    day and period but never share a study week, they don't conflict."""
+    for nm in new_meets:
+        if nm.day_of_week is None or nm.start_period is None or nm.duration is None:
+            continue
+        n_end = nm.start_period + nm.duration
+        for em in existing_meets:
+            if em.day_of_week is None or em.start_period is None or em.duration is None:
+                continue
+            if nm.day_of_week != em.day_of_week:
+                continue
+            e_end = em.start_period + em.duration
+            # Check time overlap
+            if not (n_end <= em.start_period or e_end <= nm.start_period):
+                # Time overlaps — check if study weeks also overlap
+                if _weeks_overlap(_get_study_weeks(nm), _get_study_weeks(em)):
                     return True
     return False
 
@@ -111,23 +147,7 @@ def _has_campus_conflict_in_day(new_meets: List[SectionMeeting], existing_meets:
     return any(len(cs) > 1 for cs in by_day.values())
 
 
-# ---- preference filters ----
-
-def _filter_morning(meetings: List[SectionMeeting]) -> bool:
-    for m in meetings:
-        if m.start_period is not None and m.duration is not None:
-            if m.start_period + m.duration - 1 > 6:
-                return False
-    return True
-
-
-def _filter_afternoon(meetings: List[SectionMeeting]) -> bool:
-    for m in meetings:
-        if m.start_period is not None:
-            if m.start_period < 7:
-                return False
-    return True
-
+# ---- preference helpers ----
 
 def _calc_pref_match_pct(slots: List[MeetingSlot], preference: str) -> float:
     """Calculate what percentage of meetings match the given preference."""
@@ -142,7 +162,7 @@ def _calc_pref_match_pct(slots: List[MeetingSlot], preference: str) -> float:
     if preference == "COMPACT_DAYS":
         days = len(set(s.day_of_week for s in slots))
         return max(0, (6 - days) / 3) * 100
-    return 100.0  # BALANCED is always 100%
+    return 100.0  # BALANCED / CUSTOM_DAYS is always 100%
 
 
 # ---- plan builder ----
@@ -154,134 +174,190 @@ def _build_plan(
     subj_by_id: Dict[str, Subject],
     preference: str,
     campus_pref: str,
-) -> List[ScheduleOption]:
+    custom_days: List[int],
+    allow_heavy_days: bool,
+) -> Tuple[List[ScheduleOption], List[str]]:
+    """Build schedule options. Returns (options, warnings)."""
 
-    # 1. Filter sections by campus to drastically reduce search space before DFS
-    filtered: Dict[str, List[Section]] = {}
-    
+    build_warnings: List[str] = []
+
+    # ====== Phase 1: Pre-filter sections ======
+
+    # 1a. Filter by campus
     pref_code = None
     if campus_pref == "CS1":
         pref_code = "1"
     elif campus_pref == "CS2":
         pref_code = "2"
 
+    filtered: Dict[str, List[Section]] = {}
     for sid, sections in sections_per_subject.items():
         valid_secs = []
         for sec in sections:
+            meets = meet_by_sec.get(int(sec.section_id), [])
+
+            # Campus filter
             if pref_code:
-                meets = meet_by_sec.get(int(sec.section_id), [])
                 bad_campus = False
                 for m in meets:
-                    if m.day_of_week is None: continue
+                    if m.day_of_week is None:
+                        continue
                     campus = _infer_campus(m)
                     if campus and campus != pref_code:
                         bad_campus = True
                         break
                 if bad_campus:
                     continue
+
+            # Custom days filter (HARD constraint)
+            if preference == "CUSTOM_DAYS" and custom_days:
+                bad_day = False
+                for m in meets:
+                    if m.day_of_week is not None and m.day_of_week not in custom_days:
+                        bad_day = True
+                        break
+                if bad_day:
+                    continue
+
             valid_secs.append(sec)
-            
+
         if not valid_secs:
-            # If a subject has NO sections available at the chosen campus, it's impossible to schedule
-            return []
+            subj = subj_by_id.get(sid)
+            subj_name = subj.subject_name if subj else sid
+            if preference == "CUSTOM_DAYS" and custom_days:
+                day_names = {2: "T2", 3: "T3", 4: "T4", 5: "T5", 6: "T6", 7: "T7"}
+                chosen = ", ".join(day_names.get(d, f"T{d}") for d in sorted(custom_days))
+                build_warnings.append(f"Môn {sid} ({subj_name}) không có lớp nào vào {chosen}.")
+            elif pref_code:
+                cs_label = "CS1 (LTK)" if pref_code == "1" else "CS2 (Dĩ An)"
+                build_warnings.append(f"Môn {sid} ({subj_name}) không có lớp nào tại {cs_label}.")
+            return [], build_warnings
         filtered[sid] = valid_secs
 
-    # 2. Build schedule (DFS with Backtracking & Pruning)
-    # Sort subjects by number of available sections (fewest first) to minimize branching factor early
+    if not filtered:
+        return [], build_warnings
+
+    # ====== Phase 2: DFS with Diversity (Randomized Restarts) ======
+
     subject_ids = sorted(list(filtered.keys()), key=lambda sid: len(filtered[sid]))
-    
-    top_combos = []
+
+    all_found_combos: List[Tuple[float, List[Section]]] = []
+    seen_keys: Set[Tuple[int, ...]] = set()
     MAX_PLANS = 10
-    MAX_ITERATIONS = 300000
-    iterations = 0
+    MAX_ITERATIONS_PER_RUN = 100000
+    NUM_RUNS = 3
 
-    def dfs(subj_idx: int, current_combo: List[Section], current_slots: List[MeetingSlot], current_campus: List[CampusSlot], current_raw_meets: List[SectionMeeting]):
-        nonlocal iterations, top_combos
-        
-        if iterations >= MAX_ITERATIONS:
-            return
-            
-        if subj_idx == len(subject_ids):
-            # Scored! Full valid combo found
-            days = set(s.day_of_week for s in current_slots)
-            cc = detect_campus_conflicts(current_campus)
-            sc, _ = score_plan(current_slots, current_campus, cc, preference, len(days))
-            top_combos.append((sc, list(current_combo)))
-            top_combos.sort(key=lambda x: x[0], reverse=True)
-            top_combos = top_combos[:MAX_PLANS]
-            return
+    for run_idx in range(NUM_RUNS):
+        # Shuffle section order within each subject for diversity
+        run_filtered = {}
+        for sid in subject_ids:
+            secs = list(filtered[sid])
+            if run_idx > 0:
+                random.shuffle(secs)
+            run_filtered[sid] = secs
 
-        sid = subject_ids[subj_idx]
-        for sec in filtered[sid]:
-            iterations += 1
-            if iterations >= MAX_ITERATIONS:
-                break
-                
-            meets = meet_by_sec.get(int(sec.section_id), [])
-            slots = _to_slots(meets)
-            
-            # Pruning 1: Time conflict
-            if _has_conflict_with(slots, current_slots):
-                continue
-                
-            # Pruning 2: Campus conflict in the same day (if ALL)
-            if campus_pref == "ALL":
-                if _has_campus_conflict_in_day(meets, current_raw_meets):
+        iterations = 0
+        run_combos: List[Tuple[float, List[Section]]] = []
+
+        def dfs(subj_idx: int, current_combo: List[Section], current_meets: List[SectionMeeting]):
+            nonlocal iterations, run_combos
+
+            if iterations >= MAX_ITERATIONS_PER_RUN:
+                return
+            if len(run_combos) >= 5:
+                return  # 5 per run is enough
+
+            if subj_idx == len(subject_ids):
+                # Full valid combo found — score it
+                combo_key = tuple(sorted(int(s.section_id) for s in current_combo))
+                if combo_key in seen_keys:
+                    return
+                seen_keys.add(combo_key)
+
+                all_slots = []
+                all_campus = []
+                for sec in current_combo:
+                    ms = meet_by_sec.get(int(sec.section_id), [])
+                    all_slots.extend(_to_slots(ms))
+                    all_campus.extend(_to_campus_slots(ms))
+
+                days = set(s.day_of_week for s in all_slots)
+                cc = detect_campus_conflicts(all_campus)
+                sc, _ = score_plan(all_slots, all_campus, cc, preference, len(days), allow_heavy_days)
+                run_combos.append((sc, list(current_combo)))
+                return
+
+            sid = subject_ids[subj_idx]
+            for sec in run_filtered[sid]:
+                iterations += 1
+                if iterations >= MAX_ITERATIONS_PER_RUN:
+                    break
+
+                meets = meet_by_sec.get(int(sec.section_id), [])
+
+                # Pruning 1: Time conflict (study-weeks aware)
+                if _has_conflict_with(meets, current_meets):
                     continue
-                    
-            # Valid, branch
-            dfs(
-                subj_idx + 1, 
-                current_combo + [sec], 
-                current_slots + slots, 
-                current_campus + _to_campus_slots(meets), 
-                current_raw_meets + meets
-            )
 
-    dfs(0, [], [], [], [])
+                # Pruning 2: Campus conflict in the same day (if ALL)
+                if campus_pref == "ALL":
+                    if _has_campus_conflict_in_day(meets, current_meets):
+                        continue
 
-    # If DFS exhausted / hit limits and found NOTHING, try a greedy fallback just to return SOMETHING (if possible)
+                # Valid — branch deeper
+                dfs(subj_idx + 1, current_combo + [sec], current_meets + meets)
+
+        dfs(0, [], [])
+        all_found_combos.extend(run_combos)
+
+    # Sort all found combos by score, take top 10
+    all_found_combos.sort(key=lambda x: x[0], reverse=True)
+    top_combos = all_found_combos[:MAX_PLANS]
+
+    # ====== Phase 2b: Greedy Fallback (safety net) ======
     if not top_combos:
-        # Greedy fallback variations
+        logger.warning("[Scheduler] DFS found 0 results, trying greedy fallback")
         for start_idx in range(min(MAX_PLANS, len(filtered[subject_ids[0]])) if subject_ids else 1):
             chosen: List[Section] = []
-            chosen_slots: List[MeetingSlot] = []
-            chosen_raw: List[SectionMeeting] = []
+            chosen_meets: List[SectionMeeting] = []
             for i, sid in enumerate(subject_ids):
                 picked = False
-                sections_to_try = [filtered[sid][start_idx]] if i == 0 else filtered[sid]
+                sections_to_try = [filtered[sid][start_idx % len(filtered[sid])]] if i == 0 else filtered[sid]
                 for sec in sections_to_try:
                     meets = meet_by_sec.get(int(sec.section_id), [])
-                    slots = _to_slots(meets)
-                    if not _has_conflict_with(slots, chosen_slots):
-                        if campus_pref == "ALL" and _has_campus_conflict_in_day(meets, chosen_raw):
+                    if not _has_conflict_with(meets, chosen_meets):
+                        if campus_pref == "ALL" and _has_campus_conflict_in_day(meets, chosen_meets):
                             continue
                         chosen.append(sec)
-                        chosen_slots.extend(slots)
-                        chosen_raw.extend(meets)
+                        chosen_meets.extend(meets)
                         picked = True
                         break
                 if not picked:
-                    # Force pick the first one just to complete the schedule (will have conflicts, but frontend shows them)
                     chosen.append(filtered[sid][0])
-                    chosen_slots.extend(_to_slots(meet_by_sec.get(int(filtered[sid][0].section_id), [])))
-                    chosen_raw.extend(meet_by_sec.get(int(filtered[sid][0].section_id), []))
-            
-            days = set(s.day_of_week for s in chosen_slots)
-            cc = detect_campus_conflicts(_to_campus_slots(chosen_raw))
-            sc, _ = score_plan(chosen_slots, _to_campus_slots(chosen_raw), cc, preference, len(days))
+                    chosen_meets.extend(meet_by_sec.get(int(filtered[sid][0].section_id), []))
+
+            all_slots = []
+            all_campus = []
+            for sec in chosen:
+                ms = meet_by_sec.get(int(sec.section_id), [])
+                all_slots.extend(_to_slots(ms))
+                all_campus.extend(_to_campus_slots(ms))
+            days = set(s.day_of_week for s in all_slots)
+            cc = detect_campus_conflicts(all_campus)
+            sc, _ = score_plan(all_slots, all_campus, cc, preference, len(days), allow_heavy_days)
             top_combos.append((sc, chosen))
-            
+
         top_combos.sort(key=lambda x: x[0], reverse=True)
         top_combos = top_combos[:MAX_PLANS]
 
-    # 3. Build result
+    # ====== Phase 3: Build result objects ======
     results: List[ScheduleOption] = []
     labels = {
         "BALANCED": "Cân bằng",
-        "MORNING_ONLY": "Chỉ buổi sáng (tiết 1-6)",
+        "MORNING_ONLY": "Chỉ buổi sáng (tiết 2-6)",
         "AFTERNOON_ONLY": "Chỉ buổi chiều (tiết 7-12)",
         "COMPACT_DAYS": "Gom ít ngày",
+        "CUSTOM_DAYS": "Ngày tùy chọn",
     }
 
     for rank, (score, combo) in enumerate(top_combos):
@@ -328,9 +404,9 @@ def _build_plan(
                 total_workload += float(subj.workload_score or 0.0)
 
         campus_conflicts = detect_campus_conflicts(all_campus)
-        plan_score, breakdown = score_plan(all_slots, all_campus, campus_conflicts, preference, len(days_set))
+        plan_score, breakdown = score_plan(all_slots, all_campus, campus_conflicts, preference, len(days_set), allow_heavy_days)
 
-        warnings = []
+        warnings = list(build_warnings)  # include pre-filter warnings
         if preference == "AFTERNOON_ONLY":
             for item in items:
                 if item.meetings and all(m.start_period < 7 for m in item.meetings):
@@ -361,7 +437,7 @@ def _build_plan(
             pref_match_pct=round(pref_match_pct, 0),
         ))
 
-    return results
+    return results, build_warnings
 
 # ---- public API ----
 
@@ -369,7 +445,7 @@ def generate_options(
     db: Session, req: ScheduleGenerateRequest
 ) -> Tuple[List[ScheduleOption], Dict[str, List[ScheduleItem]]]:
     sections_per_subject = _load_sections_for_subjects(
-        db, req.student_code, req.term_code, req.subject_ids
+        db, req.student_code, req.term_code, req.subject_ids, req.program_type
     )
     if not sections_per_subject:
         return [], {}
@@ -384,7 +460,10 @@ def generate_options(
     options_by_key: Dict[Tuple[int, ...], ScheduleOption] = {}
 
     for pref in req.preferences:
-        opts = _build_plan(db, sections_per_subject, meet_by_sec, subj_by_id, pref, req.campus_pref)
+        opts, warnings = _build_plan(
+            db, sections_per_subject, meet_by_sec, subj_by_id,
+            pref, req.campus_pref, req.custom_days, req.allow_heavy_days,
+        )
         for opt in opts:
             key = tuple(sorted(opt.section_ids))
             if key in options_by_key:
@@ -392,7 +471,7 @@ def generate_options(
                 if opt.label not in options_by_key[key].label:
                     options_by_key[key].label += f" + {opt.label}"
                 continue
-            
+
             options_by_key[key] = opt
 
     options = list(options_by_key.values())

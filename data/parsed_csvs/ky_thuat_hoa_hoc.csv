@@ -1,0 +1,75 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1003,,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương General Chemistry,3,BẮT BUỘC,,True
+1,CH1001,Nhập môn về kỹ thuật Introduction to Engineering,3,BẮT BUỘC,,True
+1,PH1003,Vật lý 1 General Physics 1,4,BẮT BUỘC,,True
+1,LA1003,,2,Thể dục (Chọn 1),PE,False
+2,MT1005,,4,BẮT BUỘC,,True
+2,PH1007,Thí nghiệm vật lý General Physics Labs,1,BẮT BUỘC,,True
+2,CI1003,Vẽ kỹ thuật Engineering Drawing,3,BẮT BUỘC,,True
+2,MT1007,Đại số tuyến tính Linear Algebra,3,BẮT BUỘC,,True
+2,LA1005,Anh văn 2 English 2,2,BẮT BUỘC,,True
+2,SP1007,Pháp luật Việt Nam Đại cương Introduction to VietNamese Law,2,BẮT BUỘC,,True
+2,MI1003,,0,Thể dục (Chọn 1),PE,False
+3,LA1007,Anh văn 3 English 3,2,BẮT BUỘC,,True
+3,CH2003,Hóa lý 1 Physical Chemistry 1,3,BẮT BUỘC,,True
+3,CH2113,Hóa phân tích Analytical Chemistry,3,BẮT BUỘC,,True
+3,CH2013,Hóa vô cơ (+TN) Inorganic Chemistry (+Lab),4,BẮT BUỘC,,True
+3,SP1031,Triết học Mác - Lênin Marxist - Leninist Philosophy,3,BẮT BUỘC,,True
+3,CH2021,Hóa hữu cơ Organic Chemistry,3,BẮT BUỘC,,True
+4,LA1009,Anh văn 4 English 4,2,BẮT BUỘC,,True
+4,CH2109,Hóa lý 2 Physical Chemistry 2,3,BẮT BUỘC,,True
+4,CH2019,Quá trình và Thiết bị Cơ học Mechanical Processes And Equipments,3,BẮT BUỘC,,True
+4,SP1033,Kinh tế Chính trị Mác - Lênin Marxist - Leninist Political Economy,2,BẮT BUỘC,,True
+4,MT2013,Xác suất và Thống kê Probability and Statistics,4,BẮT BUỘC,,True
+4,CH2155,Thí nghiệm Hóa phân tích Analytical Chemistry Laboratory,2,BẮT BUỘC,,True
+5,SP1035,Chủ nghĩa Xã hội Khoa học Scientific Socialism,2,BẮT BUỘC,,True
+5,CH2051,Quá trình và Thiết bị Truyền khối Mass Transfer Processes And Equipments,3,BẮT BUỘC,,True
+5,CH2043,Quá trình và Thiết bị Truyền nhiệt Heat Transfer Processes And Equipments,3,BẮT BUỘC,,True
+5,CH2041,Thí nghiệm Hóa lý Physical Chemistry Laboratory,2,BẮT BUỘC,,True
+5,CH3329,Các Phương pháp Phân tích Hiện đại Advanced Analysis MeThods,3,BẮT BUỘC,,True
+5,CH4147,,3,BẮT BUỘC,,True
+5,CH3339,Cơ sở Hóa sinh và Vi sinh Principle Of Biochemistry And Microbiology,3,BẮT BUỘC,,True
+5,CH3341,Cơ sở điều khiển quá trình Process Control Fundamentals,3,BẮT BUỘC,,True
+5,CH4085,Hóa học và Công nghệ chất Hoạt động Bề mặt Surfactant Chemistry And Technology,3,BẮT BUỘC,,True
+5,CH3425,Sinh hóa dược Pharmaceutical Biochemistry,3,BẮT BUỘC,,True
+5,CH3427,"Sinh lý, miễn dịch học Physiology and Immumology",3,BẮT BUỘC,,True
+5,CH3429,Công nghệ sản xuất mỹ phẩm Technology of cosmetic manufacturing,3,BẮT BUỘC,,True
+5,CH3421,Cơ sở kỹ thuật mỹ phẩm Introduction to Cosmetic Engineering,3,BẮT BUỘC,,True
+6,CH3347,Kỹ thuật Phản ứng Reaction Engineering,3,BẮT BUỘC,,True
+6,CH2053,Thí nghiệm Hóa hữu cơ Organic Chemistry Lab,2,BẮT BUỘC,,True
+6,SP1039,Lịch sử Đảng Cộng sản Việt Nam History of Vietnamese Communist Party,2,BẮT BUỘC,,True
+6,CH3299,Thiết kế máy và nhà máy hóa chất Chemical Equipment and Process Plant Design,3,BẮT BUỘC,,True
+6,CH3015,Thí nghiệm Quá trình Thiết bị Laboratory Of Unit Operations,2,BẮT BUỘC,,True
+6,CH3355,Thực tập Ngoài trường Internship,2,BẮT BUỘC,,True
+7,CH3133,"Mô hình hóa, Mô phỏng và Tối ưu hóa trong Công nghệ Hóa học Modeling, Simulation And Optimization For Chemical Engineering",3,BẮT BUỘC,,True
+7,CH3305,Thiết kế công nghệ và P&ID cho quá trình hoá học Chemical Process and P&ID Design,3,BẮT BUỘC,,True
+7,SP1037,Tư tưởng Hồ Chí Minh Ho Chi Minh Ideology,2,BẮT BUỘC,,True
+7,CH4053,,2,BẮT BUỘC,,True
+7,CH4007,Đồ án Thiết kế Kỹ thuật Hóa học Project Of Unit Operation And Process In Chemical Engineering,2,BẮT BUỘC,,True
+7,CH3423,Phát triển bền vững và xử lý môi trường Sustainable Development and Environmental Treatment,3,TỰ CHỌN NHÓM B,B,False
+7,CH4059,Kiểm toán Năng lượng Energy Auditing,3,TỰ CHỌN NHÓM B,B,False
+7,CH4061,Kỹ thuật đường ống bể chứa Pipeline Engineering and Storage System,3,TỰ CHỌN NHÓM B,B,False
+7,CH4127,Công nghệ chế biến khí thiên nhiên Natural Gas Processing,3,TỰ CHỌN NHÓM B,B,False
+7,CH4129,Công nghệ lọc và chế biến dầu Petroleum refining and Petroleum Processing,3,TỰ CHỌN NHÓM B,B,False
+7,CH4089,Cơ sở kỹ thuật bức xạ và ứng dụng Basics of Radio-Chemical Engineering,3,TỰ CHỌN NHÓM B,B,False
+7,CH3309,Thiết kế Thí nghiệm và Xử lý Số liệu Experiment Design And Data Analysis,3,TỰ CHỌN NHÓM B,B,False
+7,CH4087,Các Phương pháp Vật lý Nghiên cứu Chất rắn Physical MeThods For Studying Solid Phases,3,TỰ CHỌN NHÓM B,B,False
+7,CH4123,Hóa học silicate và ứng dụng Physical Chemistry of the Silicates and their Applications,3,TỰ CHỌN NHÓM B,B,False
+7,CH4135,Cơ sở vật liệu bán dẫn Fundamentals of Semiconductor Materials,3,TỰ CHỌN NHÓM B,B,False
+7,CH4081,Công nghệ sản xuất phân bón và các hóa chất vô cơ Fertilizers and Inorganic Chemicals Production Technolo,0,TỰ CHỌN NHÓM B,B,False
+7,CH4131,Thiết bị đo lường và điều khiển Measuring and Control Equipment,3,TỰ CHỌN NHÓM B,B,False
+7,CH4133,Pin và các hệ chuyển hóa năng lượng Batteries and Energy Conversion Systems,3,TỰ CHỌN NHÓM B,B,False
+7,CH4079,Hóa học xanh Green Chemistry,3,TỰ CHỌN NHÓM B,B,False
+7,CH4091,Hóa học Nano và Ứng dụng Nano Chemistry And Applications,3,TỰ CHỌN NHÓM B,B,False
+7,CH4125,Độc chất học Fundamentals Of Toxicology,3,TỰ CHỌN NHÓM B,B,False
+7,CH4137,Công nghệ dẫn truyền thuốc trong dược phẩm và mỹ phẩm Drug delivery Technolology in Pharmaceuticals and Come,0,TỰ CHỌN NHÓM B,B,False
+7,CH4139,Công nghệ bào chế và sản xuất dược phẩm Design and Production of Medicines,3,TỰ CHỌN NHÓM B,B,False
+7,CH4143,Công nghệ ứng dụng hợp chất tự nhiên Technology for the application of natural compounds,3,TỰ CHỌN NHÓM B,B,False
+7,CH4145,Kiểm nghiệm dược phẩm Pharmaceutical analysis,3,TỰ CHỌN NHÓM B,B,False
+7,CH4141,Cơ sở tổng hợp hóa dược Principles of drug synthesis,3,TỰ CHỌN NHÓM B,B,False
+7,CH4149,Quản lý chất lượng mỹ phẩm Quality management for cosmetic products,3,TỰ CHỌN NHÓM B,B,False
+7,CH4151,Mỹ phẩm chức năng Functional cosmetics,3,TỰ CHỌN NHÓM B,B,False
+7,CH4153,Thiết kế và phát triển sản phẩm mỹ phẩm Design and development for cosmetic products,3,TỰ CHỌN NHÓM B,B,False
+8,CH4357,Đồ án Tốt nghiệp Capstone Project,4,BẮT BUỘC,,True
+8,CH3307,An toàn và vận hành quá trình hoá học Process Safety and Operation,3,BẮT BUỘC,,True

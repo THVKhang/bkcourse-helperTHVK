@@ -2,7 +2,7 @@ from __future__ import annotations
 from pydantic import BaseModel, Field
 from typing import List, Literal, Optional, Dict
 
-SchedulePreference = Literal["COMPACT_DAYS", "MORNING_ONLY", "AFTERNOON_ONLY", "BALANCED", "SAME_CAMPUS"]
+SchedulePreference = Literal["COMPACT_DAYS", "MORNING_ONLY", "AFTERNOON_ONLY", "BALANCED", "SAME_CAMPUS", "CUSTOM_DAYS"]
 
 class ScheduleGenerateRequest(BaseModel):
     student_code: str
@@ -10,6 +10,9 @@ class ScheduleGenerateRequest(BaseModel):
     subject_ids: List[str] = Field(..., description="Subject IDs to schedule")
     preferences: List[SchedulePreference] = ["BALANCED", "MORNING_ONLY", "COMPACT_DAYS"]
     campus_pref: Literal["ALL", "CS1", "CS2"] = "ALL"
+    custom_days: List[int] = Field(default_factory=list, description="Specific days to attend, e.g. [2,3,6] = T2,T3,T6")
+    allow_heavy_days: bool = Field(default=True, description="If False, heavily penalize days with >8 periods")
+    program_type: Literal["STANDARD", "HIGH_QUALITY", "TALENT", "PFIEV"] = "STANDARD"
 
 class ScheduleMeeting(BaseModel):
     day_of_week: int

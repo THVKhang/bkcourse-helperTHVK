@@ -11,4 +11,5 @@ class Student(Base):
     auth_id: Mapped[uuid.UUID | None] = mapped_column(PG_UUID(as_uuid=True), nullable=True, unique=True, index=True)
     student_code: Mapped[str] = mapped_column(String(20), unique=True, index=True)
     full_name: Mapped[str | None] = mapped_column(Text, nullable=True)
+    program_type: Mapped[str] = mapped_column(String(20), default="STANDARD") # STANDARD, HIGH_QUALITY, TALENT, PFIEV
     created_at: Mapped[object] = mapped_column(DateTime(timezone=True), server_default=func.now())

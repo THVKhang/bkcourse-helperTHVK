@@ -93,7 +93,7 @@ export const api = {
   getRecommendations: (payload: {student_code: string; program_id: number; semester_no: number; term_profile: "NORMAL"|"SUMMER"; target_credits: number}) =>
     http<RecommendationResponse>("/recommendations", { method: "POST", body: JSON.stringify(payload) }),
 
-  generateSchedule: (payload: {student_code: string; term_code: string; subject_ids: string[]; preferences: SchedulePreference[]; campus_pref?: "ALL" | "CS1" | "CS2"}) =>
+  generateSchedule: (payload: {student_code: string; term_code: string; subject_ids: string[]; preferences: SchedulePreference[]; campus_pref?: "ALL" | "CS1" | "CS2"; custom_days?: number[]; allow_heavy_days?: boolean}) =>
     http<ScheduleGenerateResponse>("/schedule/generate", { method: "POST", body: JSON.stringify(payload) }),
 
   createShare: (payload: {student_id?: string; term_code?: string; plan_data: ScheduleOption}) =>

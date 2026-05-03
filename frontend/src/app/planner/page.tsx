@@ -11,7 +11,7 @@ import { toast } from "sonner";
 import {
   AlertTriangle, CalendarDays, CheckCircle2, ChevronRight, GraduationCap, Clock, Info,
   Sun, Moon, Minimize2, LayoutGrid, ClipboardPaste, Eye, Upload, FileText,
-  XCircle, Plus, Search, BookOpen, Download, ArrowRight, MapPin, Star, Share2, Loader2, Sparkles, Trash2, MousePointerClick, Calendar, Link2
+  XCircle, Plus, Search, BookOpen, Download, ArrowRight, MapPin, Star, Share2, Loader2, Sparkles, Trash2, MousePointerClick, Calendar, Link2, CalendarCheck, Zap
 } from "lucide-react";
 import type { PasteImportResponse, ScheduleOption, SchedulePreference, ParsedMeeting } from "@/lib/types";
 import { exportToExcel } from "@/lib/export-excel";
@@ -27,15 +27,21 @@ const DAY_CLASSES: Record<number, string> = {
   5: "day-t5 day-pill", 6: "day-t6 day-pill", 7: "day-t7 day-pill",
 };
 
-const PREF_OPTIONS: { id: SchedulePreference; label: string; desc: string; icon: React.ElementType }[] = [
-  { id: "BALANCED", label: "Cân bằng", desc: "Giàn đều các môn trong tuần", icon: LayoutGrid },
-  { id: "MORNING_ONLY", label: "Chỉ buổi sáng", desc: "Tiết 1–6 (trước 12h)", icon: Sun },
-  { id: "AFTERNOON_ONLY", label: "Chỉ buổi chiều", desc: "Tiết 7–12 (sau 12h)", icon: Moon },
-  { id: "COMPACT_DAYS", label: "Gom ít ngày", desc: "Học ít ngày nhất có thể", icon: Minimize2 },
+const PREF_OPTIONS: { id: SchedulePreference; label: string; desc: string; icon: React.ElementType; color: string; activeBg: string; activeBorder: string }[] = [
+  { id: "BALANCED", label: "Cân bằng", desc: "Giàn đều các môn trong tuần", icon: LayoutGrid, color: "text-indigo-500", activeBg: "bg-indigo-50 dark:bg-indigo-950/40", activeBorder: "border-indigo-300 dark:border-indigo-700" },
+  { id: "MORNING_ONLY", label: "Chỉ buổi sáng", desc: "Tiết 2–6 (trước 12h)", icon: Sun, color: "text-amber-500", activeBg: "bg-amber-50 dark:bg-amber-950/40", activeBorder: "border-amber-300 dark:border-amber-700" },
+  { id: "AFTERNOON_ONLY", label: "Chỉ buổi chiều", desc: "Tiết 7–12 (sau 12h)", icon: Moon, color: "text-violet-500", activeBg: "bg-violet-50 dark:bg-violet-950/40", activeBorder: "border-violet-300 dark:border-violet-700" },
+  { id: "COMPACT_DAYS", label: "Gom ít ngày", desc: "Học ít ngày nhất có thể", icon: Minimize2, color: "text-emerald-500", activeBg: "bg-emerald-50 dark:bg-emerald-950/40", activeBorder: "border-emerald-300 dark:border-emerald-700" },
+  { id: "CUSTOM_DAYS", label: "Chọn ngày cụ thể", desc: "Chỉ học vào các ngày bạn chọn", icon: CalendarCheck, color: "text-rose-500", activeBg: "bg-rose-50 dark:bg-rose-950/40", activeBorder: "border-rose-300 dark:border-rose-700" },
+];
+
+const DAY_TOGGLE_OPTIONS = [
+  { value: 2, label: "T2" }, { value: 3, label: "T3" }, { value: 4, label: "T4" },
+  { value: 5, label: "T5" }, { value: 6, label: "T6" }, { value: 7, label: "T7" },
 ];
 
 const CAMPUS_LABELS: Record<string, string> = { "1": "CS1 (LTK)", "2": "CS2 (Dĩ An)" };
-const SCORE_LABELS: Record<string, string> = { gap: "Lủng giờ", commute: "Đi lại", campus: "Cơ sở", preference: "Sở thích" };
+const SCORE_LABELS: Record<string, string> = { gap: "Lủng giờ", preference: "Sở thích", commute: "Đi lại", fatigue: "Cường độ", campus: "Cơ sở" };
 
 function MeetingPill({ m }: { m: ParsedMeeting }) {
   const end = (m.start_period || 0) + (m.duration || 0) - 1;
@@ -49,6 +55,12 @@ function MeetingPill({ m }: { m: ParsedMeeting }) {
   );
 }
 
+const STEP_COLORS = [
+  { bg: 'bg-indigo-500', border: 'border-indigo-500', text: 'text-indigo-600 dark:text-indigo-400', line: 'bg-indigo-400' },
+  { bg: 'bg-violet-500', border: 'border-violet-500', text: 'text-violet-600 dark:text-violet-400', line: 'bg-violet-400' },
+  { bg: 'bg-amber-500', border: 'border-amber-500', text: 'text-amber-600 dark:text-amber-400', line: 'bg-amber-400' },
+];
+
 function Stepper({ step }: { step: number }) {
   const displayStep = step >= 2 ? 2 : step;
   const steps = [
@@ -58,27 +70,30 @@ function Stepper({ step }: { step: number }) {
   ];
   return (
     <div className="flex items-center justify-between w-full max-w-lg mx-auto mb-8">
-      {steps.map((s, i) => (
-        <React.Fragment key={i}>
-          <div className="flex flex-col items-center gap-2">
-            <div className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
-              i < displayStep ? 'bg-primary border-primary text-white' : 
-              i === displayStep ? 'bg-primary/10 border-primary text-primary shadow-[0_0_15px_rgba(var(--primary-rgb),0.3)]' : 
-              'bg-card border-border/50 text-muted-foreground/50'
-            }`}>
-              <s.icon className={`h-4 w-4 ${i === displayStep ? 'animate-pulse' : ''}`} />
+      {steps.map((s, i) => {
+        const c = STEP_COLORS[i];
+        return (
+          <React.Fragment key={i}>
+            <div className="flex flex-col items-center gap-2">
+              <div className={`flex h-9 w-9 items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                i < displayStep ? `${c.bg} ${c.border} text-white shadow-lg shadow-${c.bg}/25` :
+                i === displayStep ? `${c.border} ${c.text} bg-transparent` :
+                'border-border text-muted-foreground/30'
+              }`}>
+                <s.icon className="h-4 w-4" />
+              </div>
+              <span className={`text-xs font-semibold transition-colors ${
+                i <= displayStep ? c.text : 'text-muted-foreground/30'
+              }`}>{s.label}</span>
             </div>
-            <span className={`text-xs font-medium transition-colors ${
-              i <= displayStep ? 'text-foreground' : 'text-muted-foreground/50'
-            }`}>{s.label}</span>
-          </div>
-          {i < steps.length - 1 && (
-            <div className={`h-0.5 flex-1 mx-2 transition-colors duration-500 rounded-full ${
-              i < displayStep ? 'bg-primary' : 'bg-border/40'
-            }`} />
-          )}
-        </React.Fragment>
-      ))}
+            {i < steps.length - 1 && (
+              <div className={`h-0.5 flex-1 mx-3 rounded-full transition-all duration-500 ${
+                i < displayStep ? c.line : 'bg-border'
+              }`} />
+            )}
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 }
@@ -96,6 +111,9 @@ export default function UnifiedPlannerPage() {
   const [selectedSubjects, setSelectedSubjects] = useState<Set<string>>(new Set());
   const [selectedPrefs, setSelectedPrefs] = useState<Set<SchedulePreference>>(new Set(["BALANCED", "MORNING_ONLY", "COMPACT_DAYS"]));
   const [campusPref, setCampusPref] = useState<"ALL" | "CS1" | "CS2">("ALL");
+  const [programType, setProgramType] = useState<"STANDARD" | "HIGH_QUALITY" | "TALENT" | "PFIEV">("STANDARD");
+  const [customDays, setCustomDays] = useState<Set<number>>(new Set());
+  const [allowHeavyDays, setAllowHeavyDays] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [loadingMsg, setLoadingMsg] = useState("");
   const [sharing, setSharing] = useState(false);
@@ -140,13 +158,41 @@ export default function UnifiedPlannerPage() {
     }
   }, []);
 
+  // Fetch completed subjects from study-plan
+  const [completedSubjects, setCompletedSubjects] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const allCompleted = new Set<string>();
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith("sp_completed_")) {
+          try {
+            const arr = JSON.parse(localStorage.getItem(key) || "[]");
+            arr.forEach((id: string) => allCompleted.add(id));
+          } catch { /* ignore */ }
+        }
+      }
+      setCompletedSubjects(allCompleted);
+    }
+  }, []);
+
   const availableSubjects = useMemo(() => {
     if (!importData) return [];
     const map = new Map<string, number>();
     importData.sections.forEach((s) => {
       map.set(s.subject_id, (map.get(s.subject_id) || 0) + 1);
     });
-    return Array.from(map.entries()).map(([id, count]) => ({ id, count })).sort((a, b) => a.id.localeCompare(b.id));
+    
+    // Merge with importData.subjects to get prerequisites
+    const subjMap = new Map();
+    if (importData.subjects) {
+      importData.subjects.forEach(s => subjMap.set(s.subject_id, s));
+    }
+    
+    return Array.from(map.entries()).map(([id, count]) => {
+      const info = subjMap.get(id);
+      return { id, count, name: info?.subject_name, prereqs: info?.prerequisite_ids || [] };
+    }).sort((a, b) => a.id.localeCompare(b.id));
   }, [importData]);
 
   async function handleImport() {
@@ -228,6 +274,9 @@ export default function UnifiedPlannerPage() {
         subject_ids: Array.from(selectedSubjects),
         preferences: Array.from(selectedPrefs),
         campus_pref: campusPref,
+        program_type: programType,
+        custom_days: selectedPrefs.has("CUSTOM_DAYS") ? Array.from(customDays) : [],
+        allow_heavy_days: allowHeavyDays,
       });
       clearInterval(msgInterval);
 
@@ -258,14 +307,14 @@ export default function UnifiedPlannerPage() {
   return (
     <div className="grid gap-6 animate-fade-in pb-20">
       <div className="text-center max-w-2xl mx-auto">
-        <h1 className="text-3xl font-extrabold tracking-tight gradient-text inline-block mb-3">Xếp lịch thông minh</h1>
+        <h1 className="font-display text-3xl tracking-tight text-foreground mb-3">Xếp lịch thông minh</h1>
         <Stepper step={step} />
       </div>
 
       <div className="max-w-5xl mx-auto w-full">
         {step === 0 && (
           <div className="animate-slide-up grid md:grid-cols-2 gap-6">
-            <Card className="card-elevated card-accent-top h-fit border-primary/20">
+            <Card className="card-elevated h-fit">
               <CardHeader className="pb-3"><CardTitle className="text-lg">1. Dán dữ liệu</CardTitle></CardHeader>
               <CardContent className="grid gap-4">
                 <div className="grid gap-1.5">
@@ -279,7 +328,7 @@ export default function UnifiedPlannerPage() {
                   rows={8}
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm font-mono outline-none transition-all placeholder:text-muted-foreground/40 focus:ring-2 focus:ring-primary/20 resize-none"
                 />
-                <Button onClick={handleImport} disabled={importing || !rawText.trim()} className="btn-neon w-full gap-2 py-2.5 font-semibold">
+                <Button onClick={handleImport} disabled={importing || !rawText.trim()} className="w-full gap-2 py-2.5 font-semibold rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 text-white hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5 transition-all border-0">
                   {importing ? <><Loader2 className="h-4 w-4 animate-spin" />Phân tích...</> : <><ClipboardPaste className="h-4 w-4" />{importData ? "Thêm môn" : "Phân tích"}</>}
                 </Button>
                 {importData && (
@@ -290,14 +339,14 @@ export default function UnifiedPlannerPage() {
                 )}
               </CardContent>
             </Card>
-            <div className="bg-secondary/40 rounded-2xl p-6 border border-border/50 text-sm text-muted-foreground space-y-4">
-              <h3 className="font-semibold text-foreground flex items-center gap-2"><Eye className="h-4 w-4 text-primary" /> Hướng dẫn</h3>
-              <ul className="list-decimal pl-5 space-y-2">
-                <li>Truy cập <a href="https://mybk.hcmut.edu.vn" target="_blank" rel="noreferrer" className="text-primary hover:underline">mybk.hcmut.edu.vn</a></li>
-                <li>Vào mục <strong>Đăng ký môn học</strong></li>
-                <li>Bấm `Ctrl + A` (hoặc `Cmd + A` trên Mac) để chọn toàn bộ trang</li>
-                <li>Bấm `Ctrl + C` để copy</li>
-                <li>Quay lại đây và bấm `Ctrl + V` vào ô bên trái</li>
+            <div className="bg-gradient-to-br from-indigo-50/80 via-violet-50/50 to-amber-50/30 dark:from-indigo-950/30 dark:via-violet-950/20 dark:to-amber-950/10 rounded-xl p-6 border border-indigo-100 dark:border-indigo-900/30 text-sm text-muted-foreground space-y-4">
+              <h3 className="font-semibold text-foreground flex items-center gap-2"><Eye className="h-4 w-4 text-indigo-500" /> Hướng dẫn</h3>
+              <ul className="list-decimal pl-5 space-y-2.5">
+                <li>Truy cập <a href="https://mybk.hcmut.edu.vn" target="_blank" rel="noreferrer" className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">mybk.hcmut.edu.vn</a></li>
+                <li>Vào mục <strong className="text-foreground">Đăng ký môn học</strong></li>
+                <li>Bấm <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-white/10 border border-border text-xs font-mono">Ctrl + A</kbd> (hoặc <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-white/10 border border-border text-xs font-mono">Cmd + A</kbd> trên Mac) để chọn toàn bộ trang</li>
+                <li>Bấm <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-white/10 border border-border text-xs font-mono">Ctrl + C</kbd> để copy</li>
+                <li>Quay lại đây và bấm <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-white/10 border border-border text-xs font-mono">Ctrl + V</kbd> vào ô bên trái</li>
               </ul>
               {importData && (
                 <div className="mt-6 pt-4 border-t border-border">
@@ -331,23 +380,38 @@ export default function UnifiedPlannerPage() {
                 <div className="grid gap-1.5 max-h-[400px] overflow-y-auto scrollbar-thin pr-2">
                   {availableSubjects.map((subj) => {
                     const selected = selectedSubjects.has(subj.id);
+                    const unmetPrereqs = (subj.prereqs || []).filter((pid: string) => !completedSubjects.has(pid));
+                    const isLocked = unmetPrereqs.length > 0;
+
                     return (
                       <button
                         key={subj.id}
-                        onClick={() => toggleSubject(subj.id)}
+                        onClick={() => {
+                          if (isLocked) {
+                            toast.warning(`Chưa đạt môn tiên quyết: ${unmetPrereqs.join(", ")}`);
+                            return;
+                          }
+                          toggleSubject(subj.id);
+                        }}
                         className={`flex items-center justify-between rounded-lg border px-3 py-2 text-sm transition-all ${
-                          selected
-                            ? "border-primary/40 bg-primary/5 text-primary font-semibold"
-                            : "border-border/50 hover:border-primary/20 hover:bg-secondary/30 text-foreground"
+                          isLocked 
+                            ? "border-border/50 bg-secondary/30 text-muted-foreground cursor-not-allowed opacity-60" 
+                            : selected
+                              ? "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-semibold"
+                              : "border-border/50 hover:border-border hover:bg-secondary/30 text-foreground"
                         }`}
                       >
                         <div className="flex items-center gap-2">
                           <div className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all ${
-                            selected ? "border-primary bg-primary text-white" : "border-border"
+                            isLocked ? "border-muted-foreground/30 bg-secondary" : selected ? "border-emerald-500 bg-emerald-500 text-white" : "border-border"
                           }`}>
-                            {selected && <CheckCircle2 className="h-3 w-3" />}
+                            {selected && !isLocked && <CheckCircle2 className="h-3 w-3" />}
+                            {isLocked && <div className="h-1.5 w-1.5 bg-muted-foreground rounded-sm" />}
                           </div>
-                          <span className="font-mono">{subj.id}</span>
+                          <div className="flex flex-col items-start">
+                            <span className="font-mono">{subj.id}</span>
+                            {isLocked && <span className="text-[10px] text-red-500/80">Khóa ({unmetPrereqs.join(", ")})</span>}
+                          </div>
                         </div>
                         <Badge variant="secondary" className="text-xs">{subj.count} nhóm</Badge>
                       </button>
@@ -373,23 +437,23 @@ export default function UnifiedPlannerPage() {
                       <button
                         key={pref.id}
                         onClick={() => togglePref(pref.id)}
-                        className={`flex items-center gap-3 rounded-lg border px-3 py-2.5 text-left transition-all ${
+                        className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition-all ${
                           active
-                            ? "border-primary/40 bg-primary/5"
-                            : "border-border/50 hover:border-primary/20"
+                            ? `${pref.activeBorder} ${pref.activeBg}`
+                            : "border-border/50 hover:border-border"
                         }`}
                       >
                         <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all ${
-                          active ? "bg-primary/15 text-primary" : "bg-secondary text-muted-foreground"
+                          active ? `${pref.activeBg} ${pref.color}` : "bg-secondary text-muted-foreground"
                         }`}>
-                          <pref.icon className="h-4 w-4" />
+                          <pref.icon className={`h-4 w-4 ${active ? 'icon-bounce' : ''}`} />
                         </div>
                         <div className="min-w-0">
-                          <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>{pref.label}</div>
+                          <div className={`text-sm font-semibold ${active ? pref.color : "text-foreground"}`}>{pref.label}</div>
                           <div className="text-xs text-muted-foreground">{pref.desc}</div>
                         </div>
                         <div className={`ml-auto flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all ${
-                          active ? "border-primary bg-primary text-white" : "border-border"
+                          active ? `${pref.activeBorder} ${pref.color}` : "border-border"
                         }`}>
                           {active && <CheckCircle2 className="h-3 w-3" />}
                         </div>
@@ -399,9 +463,67 @@ export default function UnifiedPlannerPage() {
                 </CardContent>
               </Card>
 
+              {/* Program Type Config */}
               <Card className="card-elevated">
                 <CardHeader className="pb-3 border-b border-border/50">
-                  <CardTitle className="flex items-center gap-2 text-base"><MapPin className="h-4 w-4 text-primary" /> Cơ sở học (Bắt buộc)</CardTitle>
+                  <CardTitle className="flex items-center gap-2 text-base"><GraduationCap className="h-4 w-4 text-primary" /> Hệ đào tạo</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-4 grid gap-2">
+                  <select 
+                    value={programType} 
+                    onChange={e => setProgramType(e.target.value as any)}
+                    className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:ring-2 focus:ring-primary/20 outline-none"
+                  >
+                    <option value="STANDARD">Đại trà (A, L)</option>
+                    <option value="HIGH_QUALITY">Chất lượng cao, Tiên tiến (CC)</option>
+                    <option value="TALENT">Tài năng (TN)</option>
+                    <option value="PFIEV">Việt - Pháp (P)</option>
+                  </select>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Thuật toán sẽ chỉ xếp thời khóa biểu với các nhóm lớp dành riêng cho hệ đào tạo này.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Custom Days Picker — only visible when CUSTOM_DAYS is selected */}
+              {selectedPrefs.has("CUSTOM_DAYS") && (
+                <Card className="card-elevated border-primary/30 animate-slide-up">
+                  <CardHeader className="pb-3 border-b border-border/50">
+                    <CardTitle className="flex items-center gap-2 text-base"><CalendarCheck className="h-4 w-4 text-primary" /> Chọn ngày muốn đi học</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-4 grid grid-cols-6 gap-2">
+                    {DAY_TOGGLE_OPTIONS.map((d) => {
+                      const active = customDays.has(d.value);
+                      return (
+                        <Button
+                          key={d.value}
+                          variant={active ? "default" : "outline"}
+                          size="sm"
+                          onClick={() => {
+                            setCustomDays(prev => {
+                              const next = new Set(prev);
+                              if (next.has(d.value)) next.delete(d.value); else next.add(d.value);
+                              return next;
+                            });
+                          }}
+                          className="text-xs font-bold"
+                        >
+                          {d.label}
+                        </Button>
+                      );
+                    })}
+                  </CardContent>
+                  {customDays.size === 0 && (
+                    <div className="px-4 pb-3 text-xs text-amber-600 flex items-center gap-1">
+                      <AlertTriangle className="h-3 w-3" /> Vui lòng chọn ít nhất 1 ngày
+                    </div>
+                  )}
+                </Card>
+              )}
+
+              <Card className="card-elevated">
+                <CardHeader className="pb-3 border-b border-border/50">
+                  <CardTitle className="flex items-center gap-2 text-base"><MapPin className="h-4 w-4 text-primary" /> Cơ sở học</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-4 grid grid-cols-3 gap-2">
                   <Button variant={campusPref === "ALL" ? "default" : "outline"} size="sm" onClick={() => setCampusPref("ALL")} className="text-xs">Tất cả</Button>
@@ -410,7 +532,28 @@ export default function UnifiedPlannerPage() {
                 </CardContent>
               </Card>
 
-              <Button onClick={handleGenerate} disabled={generating || selectedSubjects.size === 0} className="btn-neon w-full gap-2 py-6 text-lg font-bold">
+              {/* Heavy Days Toggle */}
+              <Card className="card-elevated">
+                <CardContent className="py-3 px-4">
+                  <button
+                    onClick={() => setAllowHeavyDays(!allowHeavyDays)}
+                    className="flex items-center justify-between w-full"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Zap className={`h-4 w-4 ${allowHeavyDays ? 'text-muted-foreground' : 'text-amber-500'}`} />
+                      <div className="text-left">
+                        <div className="text-sm font-medium">Chấp nhận học nhiều môn/ngày?</div>
+                        <div className="text-xs text-muted-foreground">{allowHeavyDays ? 'Có — Dồn nhiều môn vào 1 ngày cũng được' : 'Không — Phân bổ đều, tối đa ~4 môn/ngày'}</div>
+                      </div>
+                    </div>
+                    <div className={`flex h-6 w-11 items-center rounded-full px-0.5 transition-colors duration-300 ${allowHeavyDays ? 'bg-primary' : 'bg-border'}`}>
+                      <div className={`h-5 w-5 rounded-full bg-white shadow-sm transition-all duration-300 ${allowHeavyDays ? 'translate-x-5 shadow-[0_0_8px_hsla(var(--primary),0.3)]' : 'translate-x-0'}`} style={{transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'}} />
+                    </div>
+                  </button>
+                </CardContent>
+              </Card>
+
+              <Button onClick={handleGenerate} disabled={generating || selectedSubjects.size === 0 || (selectedPrefs.has("CUSTOM_DAYS") && customDays.size === 0)} className="w-full gap-2 py-6 text-lg font-bold rounded-full bg-gradient-to-r from-violet-500 via-indigo-500 to-emerald-500 text-white hover:shadow-xl hover:shadow-indigo-500/20 hover:-translate-y-0.5 transition-all border-0">
                 {generating ? <><Loader2 className="h-5 w-5 animate-spin" />{loadingMsg}</> : <><Sparkles className="h-5 w-5" />Tạo Phương Án Mới</>}
               </Button>
             </div>
@@ -454,7 +597,7 @@ export default function UnifiedPlannerPage() {
                   {sharing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Share2 className="h-4 w-4" />}
                   Chia sẻ
                 </Button>
-                <Button onClick={() => setStep(3)} className={`gap-2 h-9 transition-all duration-300 ${step === 3 ? 'bg-success hover:bg-success border-success text-white shadow-lg' : 'btn-neon'}`}>
+                <Button onClick={() => setStep(3)} className={`gap-2 h-9 transition-all duration-300 rounded-full ${step === 3 ? 'bg-foreground text-background' : 'bg-foreground text-background hover:opacity-85'}`}>
                   Chốt lịch này <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
@@ -462,7 +605,7 @@ export default function UnifiedPlannerPage() {
 
             {activeOption && step === 2 && (
               <div className="grid lg:grid-cols-12 gap-6 animate-fade-in items-start">
-                <Card className="card-elevated overflow-hidden border-primary/20 shadow-xl lg:col-span-7 xl:col-span-8">
+                <Card className="card-elevated overflow-hidden lg:col-span-7 xl:col-span-8">
                   <CardContent className="p-3">
                     <div className="mb-2 flex items-center justify-between px-1">
                       <div className="font-bold text-primary flex items-center gap-2">
@@ -481,6 +624,7 @@ export default function UnifiedPlannerPage() {
                           </Badge>
                       </div>
                     </div>
+                    <div key={activeTab} className="animate-fade-in" style={{ animationDuration: '0.3s' }}>
                     <InteractiveTimetable 
                       option={activeOption} 
                       alternativeSections={alternativeSections}
@@ -509,12 +653,13 @@ export default function UnifiedPlannerPage() {
                         toast.success(`Đã đổi ${subjectId} sang nhóm ${newSectionCode}`);
                       }} 
                     />
+                    </div>
                     {/* Score Breakdown */}
                     {activeOption.score_breakdown && (
                       <div className="mt-2 grid grid-cols-5 gap-1 px-1">
-                        {Object.entries(activeOption.score_breakdown).map(([k, v]) => (
+                        {Object.entries(activeOption.score_breakdown).map(([k, v], i) => (
                           <div key={k} className="text-center">
-                            <div className={`h-1.5 rounded-full ${Number(v) >= 80 ? 'bg-success' : Number(v) >= 50 ? 'bg-amber-400' : 'bg-red-400'}`} style={{width: `${v}%`}} />
+                            <div className={`h-1.5 rounded-full score-bar-animated ${Number(v) >= 80 ? 'bg-success' : Number(v) >= 50 ? 'bg-amber-400' : 'bg-red-400'}`} style={{width: `${v}%`, animationDelay: `${i * 0.15}s`}} />
                             <div className="text-[8px] text-muted-foreground mt-0.5">{SCORE_LABELS[k] || k}</div>
                           </div>
                         ))}
@@ -583,7 +728,7 @@ export default function UnifiedPlannerPage() {
             )}
 
             {activeOption && step === 3 && (
-              <Card className="card-elevated max-w-2xl mx-auto border-success/30 shadow-2xl animate-scale-in">
+              <Card className="card-elevated max-w-2xl mx-auto animate-scale-in">
                 <CardHeader className="text-center pb-2">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
                     <CheckCircle2 className="h-8 w-8 text-success animate-pulse" />

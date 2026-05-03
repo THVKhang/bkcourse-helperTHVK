@@ -1,0 +1,110 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,EE1025,Nhập môn Về kỹ Thuật,3,BẮT BUỘC,,True
+1,MT1019,Giải tích 1 (CT Tiên tiến),4,BẮT BUỘC,,True
+1,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+1,PH1011,Vật lý - Cơ Học,4,BẮT BUỘC,,True
+1,EE2407,Nguyên lý Tự luận,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+2,MT1021,Giải tích 2 (CT Tiên tiến),4,BẮT BUỘC,,True
+2,MT1023,Cơ sở Phương trình Vi phân,3,BẮT BUỘC,,True
+2,PH1013,"Vật lý - Nhiệt, Lượng tử",3,BẮT BUỘC,,True
+2,EE1029,Cơ sở Kỹ thuật Điện - Máy tính,4,BẮT BUỘC,,True
+2,CH1015,Hóa đại cương,3,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+3,EE2401,Vật lý: Điện và Từ học,3,BẮT BUỘC,,True
+3,EE2417,Cơ sở Máy tính,3,BẮT BUỘC,,True
+3,EE2405,Xử lý Tín hiệu Tương tự,4,BẮT BUỘC,,True
+3,MT2015,Xác suất và Ứng dụng kỹ thuật,3,BẮT BUỘC,,True
+4,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+4,EE2411,Linh kiện Bán dẫn,3,BẮT BUỘC,,True
+4,EE2415,Hệ thống Máy tính và Ngôn ngữ Lập trình,4,BẮT BUỘC,,True
+4,EE2409,Cơ sở Trường điện từ,3,BẮT BUỘC,,True
+4,EE2419,Kỹ thuật số,3,BẮT BUỘC,,True
+5,EE3413,Vi xử lý,3,BẮT BUỘC,,True
+5,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+5,EE3411,Mạch điện tử,3,BẮT BUỘC,,True
+5,EE3403,Cơ sở Hệ thống Điều khiển,3,TỰ CHỌN,,False
+5,EE3405,Mạch công suất và Điện cơ,3,TỰ CHỌN,,False
+5,EE3407,Trường và sóng điện từ,3,TỰ CHỌN,,False
+5,EE3431,Xử lý số Tín hiệu,3,TỰ CHỌN,,False
+5,EE3401,Kỹ thuật Hệ thống Máy tính,3,TỰ CHỌN,,False
+6,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+6,EE2421,Đồ án Cơ sở ngành,1,BẮT BUỘC,,True
+6,EE3375,Thực tập Ngoài trường,2,BẮT BUỘC,,True
+6,EE3419,Điện tử Công suất,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE3421,Máy điện,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE4413,Giải tích hệ thống điện,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE3415,Thông tin tương tự - số,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE3423,Mạch điện tử thông tin,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE3417,Cảm biến và Đo lường,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE4407,Tự động Hóa Công nghiệp,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE3425,Thiết kế Vi mạch,3,TỰ CHỌN TỰ DO,FREE,False
+6,EE3427,Thiết kế Hệ thống nhúng,3,TỰ CHỌN TỰ DO,FREE,False
+7,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+7,EE4405,Đồ án Chuyên ngành,2,BẮT BUỘC,,True
+7,IM1013,Kinh tế học Đại cương,3,TỰ CHỌN NHÓM C,C,False
+7,IM1019,Tiếp thị Căn bản,3,TỰ CHỌN NHÓM C,C,False
+7,IM3063,Quản lý Chất lượng,3,TỰ CHỌN NHÓM C,C,False
+7,IM1031,Khởi nghiệp và đổi mới sáng tạo,3,TỰ CHỌN NHÓM C,C,False
+7,EE4413,Giải tích hệ thống điện,3,TỰ CHỌN TỰ DO,FREE,False
+7,EE4403,Mạng thông tin,3,TỰ CHỌN TỰ DO,FREE,False
+7,EE4425,AI và IoT cho hệ thống năng lượng tái tạo,3,TỰ CHỌN,,False
+7,EE4427,Lưới điện siêu nhỏ và lưới điện thông minh,3,TỰ CHỌN,,False
+7,EE4429,Công nghệ xe điện,3,TỰ CHỌN,,False
+7,EE4431,Điện tử công suất cho hệ thống năng lượng tái tạo và xe điện,3,TỰ CHỌN,,False
+7,EE4433,Thiết kế Ứng dụng IoT,3,TỰ CHỌN,,False
+7,EE4435,Máy học và ứng dụng,3,TỰ CHỌN,,False
+7,EE4437,Mạch và hệ thống siêu cao tần,3,TỰ CHỌN,,False
+7,EE4439,Hệ thống Viễn thông,3,TỰ CHỌN,,False
+7,EE4407,Tự động Hóa Công nghiệp,3,TỰ CHỌN,,False
+7,EE4423,Cấu trúc Máy tính,3,TỰ CHỌN,,False
+7,EE4441,Cơ sở Người máy (Robot),3,TỰ CHỌN,,False
+7,EE4443,Điều khiển Phi tuyến và Thích nghi,3,TỰ CHỌN,,False
+7,EE4445,Trí tuệ Nhân tạo trong Điều khiển,3,TỰ CHỌN,,False
+7,EE4447,Hệ thống Điều khiển nhúng,3,TỰ CHỌN,,False
+7,EE4449,Kỹ thuật số Nâng Cao,3,TỰ CHỌN,,False
+7,EE4451,Thiết kế Vi mạch số,3,TỰ CHỌN,,False
+7,EE4453,Thiết kế Vi mạch Tương tự,3,TỰ CHỌN,,False
+7,EE4455,Trí tuệ nhân tạo,3,TỰ CHỌN,,False
+7,EE3431,Xử lý số Tín hiệu,3,TỰ CHỌN,,False
+7,EE3401,Kỹ thuật Hệ thống Máy tính,3,TỰ CHỌN,,False
+8,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+8,EE4377,Đồ án Tốt nghiệp,4,BẮT BUỘC,,True
+8,EN1003,Con người và Môi trường,3,TỰ CHỌN,,False
+8,ME1019,Quản lý năng suất và chất lượng,3,TỰ CHỌN,,False
+8,EE4425,AI và IoT cho hệ thống năng lượng tái tạo,3,TỰ CHỌN,,False
+8,EE4427,Lưới điện siêu nhỏ và lưới điện thông minh,3,TỰ CHỌN,,False
+8,EE4429,Công nghệ xe điện,3,TỰ CHỌN,,False
+8,EE4431,Điện tử công suất cho hệ thống năng lượng tái tạo và xe điện,3,TỰ CHỌN,,False
+8,EE4433,Thiết kế Ứng dụng IoT,3,TỰ CHỌN,,False
+8,EE4435,Máy học và ứng dụng,3,TỰ CHỌN,,False
+8,EE4437,Mạch và hệ thống siêu cao tần,3,TỰ CHỌN,,False
+8,EE4439,Hệ thống Viễn thông,3,TỰ CHỌN,,False
+8,EE4441,Cơ sở Người máy (Robot),3,TỰ CHỌN,,False
+8,EE4443,Điều khiển Phi tuyến và Thích nghi,3,TỰ CHỌN,,False
+8,EE4445,Trí tuệ Nhân tạo trong Điều khiển,3,TỰ CHỌN,,False
+8,EE4447,Hệ thống Điều khiển nhúng,3,TỰ CHỌN,,False
+8,EE4449,Kỹ thuật số Nâng Cao,3,TỰ CHỌN,,False
+8,EE4451,Thiết kế Vi mạch số,3,TỰ CHỌN,,False
+8,EE4453,Thiết kế Vi mạch Tương tự,3,TỰ CHỌN,,False
+8,EE4455,Trí tuệ nhân tạo,3,TỰ CHỌN,,False

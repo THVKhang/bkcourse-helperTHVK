@@ -24,6 +24,7 @@ class ParsedSubject(BaseModel):
     subject_id: str
     subject_name: str
     credits: float
+    prerequisite_ids: List[str] = []
 
 class ParsedSection(BaseModel):
     subject_id: str

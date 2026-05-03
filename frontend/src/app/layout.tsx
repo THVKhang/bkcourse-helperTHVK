@@ -21,13 +21,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1">
-                <div className="mx-auto w-full max-w-[1200px] px-4 py-6 sm:px-6 lg:px-8">
+                <div className="mx-auto w-full max-w-[1200px] px-5 py-8 sm:px-8 lg:px-10">
                   {children}
                 </div>
               </main>
-              <footer className="border-t border-border/40 py-4">
-                <div className="mx-auto max-w-[1200px] px-4 text-center text-xs text-muted-foreground">
-                  BKCourse Helper — Built for HCMUT students 🎓
+              <footer className="py-8">
+                <div className="section-divider mx-auto max-w-[200px] mb-6" />
+                <div className="text-center text-xs text-muted-foreground tracking-wide">
+                  BKCourse Helper — Built for HCMUT students
                 </div>
               </footer>
             </div>

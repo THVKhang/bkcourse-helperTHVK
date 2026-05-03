@@ -1,0 +1,91 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,MT1011,Giải tích 1,4,BẮT BUỘC,,True
+1,MT1015,Đại số Tuyến tính,3,BẮT BUỘC,,True
+1,LA1011,Pháp văn 1,2,BẮT BUỘC,,True
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,MA1001,Nhập môn Về Kỹ thuật,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+2,MT1013,Giải tích 2,4,BẮT BUỘC,,True
+2,PH1009,Vật lý 1,4,BẮT BUỘC,,True
+2,LA1013,Pháp văn 2,2,BẮT BUỘC,,True
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+2,EN1003,Con người và Môi trường,3,BẮT BUỘC,,True
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,MI1003,Giáo dục Quốc phòng,0,Thể dục (Chọn 1),PE,False
+3,MT2007,Giải tích 3,3,BẮT BUỘC,,True
+3,MT2009,Xác suất và Thống kê,4,BẮT BUỘC,,True
+3,PH2005,Vật lý 2,4,BẮT BUỘC,,True
+3,PH2007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+3,LA1015,Pháp văn 3,2,BẮT BUỘC,,True
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+4,MT2011,Phương pháp tính,3,BẮT BUỘC,,True
+4,AS2049,Cơ học Vật rắn và Sóng cơ,3,BẮT BUỘC,,True
+4,LA1017,Pháp văn 4,2,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+4,EE2031,Điện - Giải tích mạch,3,BẮT BUỘC,,True
+4,MA2119,Thực tập Công nhân,2,BẮT BUỘC,,True
+5,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+5,LA3021,Pháp văn 5,2,BẮT BUỘC,,True
+5,CI1003,Vẽ kỹ thuật,3,BẮT BUỘC,,True
+5,MA2037,Hóa lý - Công nghệ Vật liệu,3,BẮT BUỘC,,True
+5,MA2039,Hóa hữu Cơ - Công nghệ Vật liệu,3,BẮT BUỘC,,True
+5,MA1003,Cơ sở Khoa học Vật liệu,3,BẮT BUỘC,,True
+6,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+6,LA3023,Pháp văn 6,2,BẮT BUỘC,,True
+6,IM1021,Khởi nghiệp,3,BẮT BUỘC,,True
+6,MA2035,Công nghệ Vật liệu,3,BẮT BUỘC,,True
+6,MA2007,Hóa học Polyme,3,BẮT BUỘC,,True
+6,MA3121,Thí nghiệm Hóa học Polyme,1,BẮT BUỘC,,True
+6,MA3395,Thực tập Ngoài trường,2,BẮT BUỘC,,True
+7,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+7,MA4069,Các Tính chất của Vật liệu Polyme,3,BẮT BUỘC,,True
+7,MA2015,Hóa lý Polymer,3,BẮT BUỘC,,True
+7,MA3123,Thí nghiệm Hóa lý Polyme,1,BẮT BUỘC,,True
+7,MA3019,Kỹ thuật Sản xuất các chất Cao phân tử,3,BẮT BUỘC,,True
+7,MA4157,Đồ án Chuyên ngành 1 (PBL),2,BẮT BUỘC,,True
+8,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+8,MA4067,Kỹ thuật Gia công Polyme,4,BẮT BUỘC,,True
+8,MA4153,Công nghệ Cao su,3,BẮT BUỘC,,True
+8,MA4085,Polyme Blend,3,TỰ CHỌN NHÓM A,A,False
+8,MA4159,Công nghệ Phân loại và Tái chế rác thải nhựa,3,TỰ CHỌN NHÓM A,A,False
+8,MA4161,Công nghệ sản xuất bao bì,3,TỰ CHỌN NHÓM A,A,False
+8,MA4163,Kỹ thuật sản xuất xenlulo và giấy,3,TỰ CHỌN NHÓM A,A,False
+8,MA4165,Polyme Y sinh và Polyme Phân Hủy,3,TỰ CHỌN NHÓM A,A,False
+8,MA4167,Vật liệu cao su ứng dụng,3,TỰ CHỌN NHÓM A,A,False
+8,MA4169,Vật liệu polyme xốp,3,TỰ CHỌN NHÓM A,A,False
+8,MA4395,Thực tập Kỹ sư,2,BẮT BUỘC,,True
+9,MA4079,Công nghệ Các chất Tạo màng,3,BẮT BUỘC,,True
+9,MA5025,Vật liệu Polymer Composite,3,BẮT BUỘC,,True
+9,MA4155,Thí nghiệm Công nghệ Cao su,2,BẮT BUỘC,,True
+9,MA5015,Các Phương pháp Phân tích Cấu trúc Vật liệu Hữu cơ,3,BẮT BUỘC,,True
+9,MA5019,Thực hành Tạo màng và Các Tính chất của Vật liệu Poly,0,BẮT BUỘC,,True
+9,MA5007,Đồ án Chuyên ngành 2 (PBL),2,BẮT BUỘC,,True
+10,MA5027,Luận văn Tốt nghiệp,9,BẮT BUỘC,,True
+10,MA4085,Polyme Blend,3,TỰ CHỌN NHÓM A,A,False
+10,MA4159,Công nghệ Phân loại và Tái chế rác thải nhựa,3,TỰ CHỌN NHÓM A,A,False
+10,MA4161,Công nghệ sản xuất bao bì,3,TỰ CHỌN NHÓM A,A,False
+10,MA4163,Kỹ thuật sản xuất xenlulo và giấy,3,TỰ CHỌN NHÓM A,A,False
+10,MA4165,Polyme Y sinh và Polyme Phân Hủy,3,TỰ CHỌN NHÓM A,A,False
+10,MA4167,Vật liệu cao su ứng dụng,3,TỰ CHỌN NHÓM A,A,False
+10,MA4169,Vật liệu polyme xốp,3,TỰ CHỌN NHÓM A,A,False

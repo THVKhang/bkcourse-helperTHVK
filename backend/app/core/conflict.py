@@ -75,10 +75,11 @@ def score_plan(
     campus_conflicts: List[dict],
     preference: str,
     num_days: int,
+    allow_heavy_days: bool = True,
 ) -> Tuple[float, dict]:
-    """Score a schedule plan 0-100 based on intelligent heuristics. Returns (score, breakdown)."""
+    """Score a schedule plan 0-100 based on intelligent heuristics v3. Returns (score, breakdown)."""
 
-    # 1. Gap score (35%) — non-linear penalty for large gaps
+    # 1. Gap score (25%) — non-linear penalty for large gaps
     gap_score = _calc_gap_score(slots)
 
     # 2. Preference match (30%) — high weight to respect user choice
@@ -87,22 +88,27 @@ def score_plan(
     # 3. Commute Efficiency (20%) — penalize days with very few periods (<= 3)
     commute_score = _calc_commute_score(slots)
 
-    # 4. Campus score (15%) — penalize bad campus transitions
+    # 4. Fatigue (15%) — penalize days with too many periods (user-controlled severity)
+    fatigue_score = _calc_fatigue_score(slots, allow_heavy_days)
+
+    # 5. Campus score (10%) — penalize bad campus transitions
     critical_conflicts = sum(1 for c in campus_conflicts if c.get("is_critical"))
     campus_score = max(0, 100 - critical_conflicts * 50)
 
     breakdown = {
         "gap": round(gap_score, 1),
-        "commute": round(commute_score, 1),
         "preference": round(pref_score, 1),
+        "commute": round(commute_score, 1),
+        "fatigue": round(fatigue_score, 1),
         "campus": round(campus_score, 1),
     }
 
     total = (
-        gap_score * 0.35 +
+        gap_score * 0.25 +
         pref_score * 0.30 +
         commute_score * 0.20 +
-        campus_score * 0.15
+        fatigue_score * 0.15 +
+        campus_score * 0.10
     )
 
     return round(total, 1), breakdown
@@ -133,16 +139,15 @@ def _calc_gap_score(slots: List[MeetingSlot]) -> float:
                 elif gap == 1:
                     penalty += 2.0
                 else:
-                    # Exponential penalty for larger gaps: gap 2 -> 4, gap 3 -> 9, gap 4 -> 16, etc.
+                    # Exponential penalty for larger gaps: gap 2 -> ~12, gap 3 -> ~30, gap 4 -> ~55
                     penalty += (gap ** 2.2) * 2.5
 
     # Base 100, subtract penalty
     return max(0.0, 100.0 - penalty)
 
+
 def _calc_commute_score(slots: List[MeetingSlot]) -> float:
-    """
-    Penalize going to school just for 1 class (<= 3 periods).
-    """
+    """Penalize going to school just for 1 class (<= 3 periods)."""
     if not slots:
         return 100.0
 
@@ -155,7 +160,36 @@ def _calc_commute_score(slots: List[MeetingSlot]) -> float:
         if total_periods <= 3:
             # Huge penalty for a day with <= 3 periods (likely just 1 subject)
             penalty += 35.0
-            
+
+    return max(0.0, 100.0 - penalty)
+
+
+def _calc_fatigue_score(slots: List[MeetingSlot], allow_heavy_days: bool = True) -> float:
+    """
+    Penalize days with too many periods.
+    If allow_heavy_days=False (user says no heavy days), penalty is much harsher.
+    If allow_heavy_days=True, penalty is mild (just a gentle preference).
+    """
+    if not slots:
+        return 100.0
+
+    by_day: dict[int, int] = {}
+    for s in slots:
+        by_day[s.day_of_week] = by_day.get(s.day_of_week, 0) + s.duration
+
+    penalty = 0.0
+    threshold = 8  # More than 8 periods in a day is considered heavy
+
+    for day, total_periods in by_day.items():
+        excess = max(0, total_periods - threshold)
+        if excess > 0:
+            if allow_heavy_days:
+                # Mild: user is okay with heavy days, just gentle nudge
+                penalty += excess * 3.0
+            else:
+                # Harsh: user explicitly said no heavy days
+                penalty += excess * 15.0
+
     return max(0.0, 100.0 - penalty)
 
 

@@ -1,0 +1,86 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+1,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+1,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+1,GE1013,Khoa học Trái đất,4,BẮT BUỘC,,True
+1,GE1027,Khoa học dữ liệu,3,BẮT BUỘC,,True
+1,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+1,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+1,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+1,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+1,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+1,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+1,GE1001,Nhập môn về Kỹ thuật,3,BẮT BUỘC,,True
+1,IM1031,Khởi nghiệp và đổi mới sáng tạo,3,BẮT BUỘC,,True
+1,ME1019,Quản lý năng suất và chất lượng,3,BẮT BUỘC,,True
+1,GE2099,Khoa học Trái Đất ứng dụng và Kinh tế tuần hoàn,3,BẮT BUỘC,,True
+1,GE3153,Quản lý Tài nguyên Đất và Khoáng sản,3,BẮT BUỘC,,True
+1,GE3245,Quản lý dự án,3,BẮT BUỘC,,True
+1,GE1029,Sức khỏe An toàn Môi trường,3,BẮT BUỘC,,True
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+1,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+1,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+1,GE2069,Trắc địa công trình,3,BẮT BUỘC,,True
+1,GE2035,Địa chất Kiến trúc và Đo vẽ Bản đồ Địa chất,3,BẮT BUỘC,,True
+1,GE3099,Ổn định Công trình,3,BẮT BUỘC,,True
+1,GE2021,Cơ sở Thủy địa Cơ học,3,BẮT BUỘC,,True
+1,GE3013,Thí nghiệm Địa kỹ thuật,1,BẮT BUỘC,,True
+1,GE2031,Địa chất Thủy văn,3,BẮT BUỘC,,True
+1,GE4249,Công trình khai đào,3,BẮT BUỘC,,True
+1,GE3243,Vẽ kỹ thuật xây dựng,3,BẮT BUỘC,,True
+1,GE3147,Địa hóa Môi trường,3,BẮT BUỘC,,True
+1,GE2079,Khoáng vật và thạch học,3,BẮT BUỘC,,True
+1,GE2081,Địa kỹ thuật,3,BẮT BUỘC,,True
+1,GE3089,Khai thác và Bảo vệ Tài nguyên Nước dưới đất,3,BẮT BUỘC,,True
+1,GE4029,Các Phương pháp Gia cố đất,3,BẮT BUỘC,,True
+1,GE2073,Các PP khảo sát và TN hiện trường,3,BẮT BUỘC,,True
+1,GE4175,Đánh giá tác động môi trường,3,BẮT BUỘC,,True
+1,GE4177,Thiết kế và giải pháp thi công đê kè và mái dốc,3,BẮT BUỘC,,True
+1,GE3137,Công trình Xây dựng,3,TỰ CHỌN NHÓM A,A,False
+1,GE2083,Cơ học đá,3,TỰ CHỌN NHÓM A,A,False
+1,GE3203,Ứng dụng GIS và Viễn Thám trong Quản lý Tài nguyên,3,TỰ CHỌN NHÓM A,A,False
+1,GE3279,Kiểm kê khí thải,3,TỰ CHỌN NHÓM A,A,False
+1,GE3141,Địa thống kê,3,TỰ CHỌN NHÓM B,B,False
+1,GE4033,Nền móng Công trình,3,TỰ CHỌN NHÓM B,B,False
+1,GE3247,Địa vật lý ứng dụng,3,TỰ CHỌN NHÓM B,B,False
+1,GE3037,Thực tập Kỹ thuật Phân tích các Chỉ tiêu của Môi trường Địa ch,0,TỰ CHỌN NHÓM B,B,False
+1,GE4173,Xử lý môi trường địa chất,2,TỰ CHỌN NHÓM B,B,False
+1,GE2075,Thực hành các phương pháp khảo sát và TN hiện trường,1,TỰ CHỌN NHÓM B,B,False
+1,GE4181,Địa kỹ thuật công trình biển,3,TỰ CHỌN NHÓM C,C,False
+1,GE4069,Địa chất Động lực Công trình + Kiến tập,3,TỰ CHỌN NHÓM C,C,False
+1,GE4205,Ứng dụng công nghệ mới trong kỹ thuật địa chất,3,TỰ CHỌN NHÓM C,C,False
+1,GE4179,Quan trắc địa kỹ thuật,3,TỰ CHỌN NHÓM C,C,False
+1,GE3335,Thực tập Ngoài trường,2,TỰ CHỌN NHÓM C,C,False
+1,GE4143,Đồ án Chuyên ngành,2,TỰ CHỌN NHÓM C,C,False
+1,GE4337,Đồ án Tốt nghiệp,4,TỰ CHỌN NHÓM C,C,False
+1,MI1003,Giáo dục Quốc phòng,0,TỰ CHỌN TỰ DO,FREE,False
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+1,SA4001,Hoạt động sinh viên,0,Thể dục (Chọn 1),PE,False

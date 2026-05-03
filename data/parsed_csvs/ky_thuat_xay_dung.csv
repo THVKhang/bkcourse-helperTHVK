@@ -1,0 +1,77 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1007,Đại số Tuyến tính Linear Algebra,3,BẮT BUỘC,,True
+1,MT1003,Giải tích 1 Calculus 1,4,BẮT BUỘC,,True
+1,LA1003,Anh văn 1 English 1,2,BẮT BUỘC,,True
+1,PH1003,Vật lý 1 General Physics 1,4,BẮT BUỘC,,True
+1,CI1001,Nhập môn Về kỹ thuật Introduction to Engineering,3,BẮT BUỘC,,True
+1,PH1007,Thí nghiệm Vật lý General Physics Labs,1,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1) Football,0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1) Volleyball,0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1) Table tennis,0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1) Basketball,0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1) Badminton,0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1) Swimming,0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1) Aerobic,0,Thể dục (Chọn 1),PE,False
+1,PE1023,"Võ (Vovinam, Karate, Taewondo) (Học phần 1) Martial Art",0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1) AThletics,0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1) Tennis,0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1) Chess (study part 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1) --,0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1) --,0,Thể dục (Chọn 1),PE,False
+2,PE1033,Bóng đá (Học phần 2) Football,0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2) Volleyball,0,Thể dục (Chọn 1),PE,False
+2,PE1037,Bóng bàn (Học phần 2) Table tennis,0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2) Basketball,0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2) Badminton,0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2) Swimming,0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2) Aerobic,0,Thể dục (Chọn 1),PE,False
+2,PE1047,"Võ (Vovinam, Karate, Taewondo) (Học phần 2) Martial Art",0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2) Athletics,0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2) Tennis,0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2) Chess (study part 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2) --,0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2) --,0,Thể dục (Chọn 1),PE,False
+2,MT1005,Giải tích 2 Calculus 2,4,Thể dục (Chọn 1),PE,False
+2,LA1005,Anh văn 2 English 2,2,Thể dục (Chọn 1),PE,False
+2,CH1003,Hóa đại cương General Chemistry,3,Thể dục (Chọn 1),PE,False
+2,CI1069,Khoa học Trái đất EarTh Science,4,Thể dục (Chọn 1),PE,False
+2,CI1033,Vẽ kỹ thuật Xây dựng Civil Engineering Drawing,3,Thể dục (Chọn 1),PE,False
+2,MI1003,Giáo dục Quốc phòng Military Training,0,Thể dục (Chọn 1),PE,False
+3,CI1007,Trắc địa Đại cương Basis of Surveying,3,BẮT BUỘC,,True
+3,MT2013,Xác suất và Thống kê Probability and Statistics,4,BẮT BUỘC,,True
+3,LA1007,Anh văn 3 English 3,2,BẮT BUỘC,,True
+3,SP1007,Pháp luật Việt Nam Đại cương Introduction to VieTNamese Law,2,BẮT BUỘC,,True
+3,CI2003,Cơ lưu chất Fluid Mechanics,3,BẮT BUỘC,,True
+3,CI2095,Địa chất Công trình Engineering Geology,3,BẮT BUỘC,,True
+4,MT1009,Phương pháp tính Numerical MeThods,3,BẮT BUỘC,,True
+4,SP1031,Triết học Mác - Lênin Marxist - Leninist Philosophy,3,BẮT BUỘC,,True
+4,LA1009,Anh văn 4 English 4,2,BẮT BUỘC,,True
+4,CI2037,Vật liệu Xây dựng Construction Materials,3,BẮT BUỘC,,True
+4,CI2007,Sức bền Vật liệu StrengTh of Materials,4,BẮT BUỘC,,True
+5,SP1033,Kinh tế Chính trị Mác - Lênin Marxist - Leninist Political Economy,2,BẮT BUỘC,,True
+5,CI2133,Kết cấu thép Steel Structures,3,BẮT BUỘC,,True
+5,CI2135,Cơ kết cấu Mechanics of Structures,3,BẮT BUỘC,,True
+5,CI2137,Cơ học đất Soil Mechanics,3,BẮT BUỘC,,True
+5,CI2139,Kết cấu Bê tông Cốt thép Reinforced Concrete Structures,3,BẮT BUỘC,,True
+5,CI3289,Lãnh đạo và Khởi nghiệp Leadership and Startup,3,BẮT BUỘC,,True
+5,CI3291,Lãnh đạo và Quản Lý Dự án Leadership and Management in Project,3,BẮT BUỘC,,True
+5,IM1031,Khởi nghiệp và đổi mới sáng tạo Entrepreneurship and Innovation,3,BẮT BUỘC,,True
+5,ME1019,Quản lý năng suất và chất lượng Quality and Productivity Management,3,BẮT BUỘC,,True
+6,SP1035,Chủ nghĩa Xã hội Khoa học Scientific Socialism,2,BẮT BUỘC,,True
+6,CI2145,Nền móng Foundation Engineering,4,BẮT BUỘC,,True
+6,CI3243,Kết cấu Công trình Bê tông Cốt thép Reinforced Concrete Building Structures,3,BẮT BUỘC,,True
+6,CI3043,Kỹ thuật Thi công Construction Equipment and MeThod,3,BẮT BUỘC,,True
+6,CI3445,Thực tập Ngoài trường Internship,2,BẮT BUỘC,,True
+7,SP1039,Lịch sử Đảng Cộng sản Việt Nam History of VieTNamese Communist Party,2,BẮT BUỘC,,True
+7,CI2147,Thí nghiệm công trình Structural Testing,1,BẮT BUỘC,,True
+7,CI4189,Quy hoạch Tổ chức Thi công On-Site Construction Management,3,BẮT BUỘC,,True
+7,CI4131,Kết cấu Công trình thép Steel Building Structures,3,BẮT BUỘC,,True
+7,CI4133,Đồ án Chuyên ngành Project,2,BẮT BUỘC,,True
+7,CI3061,Phương pháp Phần tử Hữu hạn Finite Element MeThod,3,TỰ CHỌN,,False
+7,CI3241,Cấp thoát nước Water Supply and Sewerage,3,TỰ CHỌN,,False
+7,CI4161,Quy hoạch Hạ tầng Đô thị Urban Infrastructure Planning,3,TỰ CHỌN,,False
+7,CI3507,Thiết kế Mặt dựng Façade Design,3,TỰ CHỌN,,False
+8,CI2151,Kinh tế Xây dựng Construction Economics,3,BẮT BUỘC,,True
+8,SP1037,Tư tưởng Hồ Chí Minh Ho Chi Minh Ideology,2,BẮT BUỘC,,True
+8,EN1003,Con người và Môi trường Humans and The Environment,3,BẮT BUỘC,,True
+8,CI4447,Đồ án Tốt nghiệp Capstone Project,4,BẮT BUỘC,,True

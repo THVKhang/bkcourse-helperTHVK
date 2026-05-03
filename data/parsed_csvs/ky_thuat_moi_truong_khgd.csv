@@ -1,0 +1,114 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+1,EN1001,Nhập môn Về kỹ thuật,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+2,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+2,EN1017,Hóa Môi trường,3,BẮT BUỘC,,True
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,EN1015,Vi sinh Vật đại cương và Thí nghiệm,4,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,CI1003,Vẽ kỹ thuật,3,BẮT BUỘC,,True
+3,CI2003,Cơ lưu chất,3,BẮT BUỘC,,True
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+3,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+3,EN2065,Hóa phân tích trong môi trường,3,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+4,EN1005,Sinh thái học,3,BẮT BUỘC,,True
+4,EN2061,Các quá trình Hoá học và Hoá lý trong kỹ thuật môi trưởng,3,BẮT BUỘC,,True
+4,EN2003,Các Quá trình Sinh học trong Kỹ thuật Môi trường,3,BẮT BUỘC,,True
+4,CI2001,Sức bền Vật liệu,3,TỰ CHỌN,,False
+4,CI3281,Kết cấu Công trình Xây dựng - Môi trường,3,TỰ CHỌN,,False
+4,CI2121,Kết cấu công trình xây dựng - môi trường,3,TỰ CHỌN,,False
+4,EN2049,Phân tích Hệ thống Môi trường,3,TỰ CHỌN,,False
+4,EN2055,Mạng lưới Cấp thoát nước,3,TỰ CHỌN,,False
+4,ME2099,Nhiệt động lực học Kỹ thuật,3,TỰ CHỌN,,False
+5,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+5,EN3005,Kỹ thuật Xử lý Nước cấp,4,BẮT BUỘC,,True
+5,EN3013,Kỹ thuật Xử lý Nước thải,4,BẮT BUỘC,,True
+5,EN2033,Luật và Chính sách Môi trường,3,BẮT BUỘC,,True
+5,EN3055,Thực tập Tham quan (Kỹ thuật Môi trường),1,BẮT BUỘC,,True
+5,IM1021,Khởi nghiệp,3,TỰ CHỌN,,False
+5,IM1025,Quản lý Dự án cho Kỹ sư,3,TỰ CHỌN,,False
+5,IM1027,Kinh tế Kỹ thuật,3,TỰ CHỌN,,False
+5,IM1031,Khởi nghiệp và đổi mới sáng tạo,3,TỰ CHỌN,,False
+5,ME1019,Quản lý năng suất và chất lượng,3,TỰ CHỌN,,False
+5,ME2173,Các công nghệ 4.0 trong quản lý năng suất và chất lượng,3,TỰ CHỌN,,False
+6,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+6,EN3001,Kỹ thuật Xử lý Khí thải,4,BẮT BUỘC,,True
+6,EN3027,Kỹ thuật Xử lý Chất thải rắn,4,BẮT BUỘC,,True
+6,EN3345,Thực tập Ngoài trường,2,BẮT BUỘC,,True
+6,EN3117,Vận hành Công trình Xử lý Môi trường,3,BẮT BUỘC,,True
+7,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+7,EN4057,Đồ án môn học xử lý chất thải (KTMT),2,BẮT BUỘC,,True
+7,EN4059,Đồ án chuyên ngành (KTMT),2,BẮT BUỘC,,True
+7,EN3217,Nhập môn phương pháp nghiên cứu khoa học trong lĩnh vực tài nguyên và môi trường,3,BẮT BUỘC,,True
+7,EN3003,Ứng dụng GIS và Viễn Thám trong Quản lý Tài nguyên và Môi trường,3,TỰ CHỌN,,False
+7,EN3023,Kỹ thuật Sinh thái,3,TỰ CHỌN,,False
+7,EN3037,Quản lý Môi trường Đô thị và Khu công nghiệp,3,TỰ CHỌN,,False
+7,EN3043,Kỹ thuật Lò đốt Chất thải,3,TỰ CHỌN,,False
+7,EN3073,An toàn Lao động và Vệ sinh Môi trường Công nghiệp,3,TỰ CHỌN,,False
+7,EN3079,Các Hệ thống Quản lý Môi trường,3,TỰ CHỌN,,False
+7,EN3083,Quan trắc Môi trường,3,TỰ CHỌN,,False
+7,EN3111,Các Quá trình Cơ học trong Kỹ thuật Môi trường,3,TỰ CHỌN,,False
+7,EN3113,Quản lý và Kỹ thuật Xử lý Đất ô nhiễm,3,TỰ CHỌN,,False
+7,EN3117,Vận hành Công trình Xử lý Môi trường,3,TỰ CHỌN,,False
+7,EN3087,Biến đổi Khí hậu,3,TỰ CHỌN,,False
+7,EN3209,Mô hình Hóa Môi trường,3,TỰ CHỌN,,False
+7,EN2057,Đồ án môn học Hóa học trong Kỹ thuật và Khoa học Môi trường,1,TỰ CHỌN,,False
+7,EN2059,Đồ án môn học Quá trình Hóa học và Hóa lý trong Kỹ thuật Môi trường,1,TỰ CHỌN,,False
+7,EN3127,Sản xuất sạch hơn,3,TỰ CHỌN,,False
+7,EN3205,Thủy văn Môi trường,3,TỰ CHỌN,,False
+7,EN3219,Kỹ thuật thông gió và kiểm soát ô nhiễm tiếng ồn,3,TỰ CHỌN,,False
+7,EN3215,Kiểm soát ô nhiễm không khí & tiếng ồn,3,TỰ CHỌN,,False
+7,EN3213,Tối ưu hóa và Quy hoạch thực nghiệm,3,TỰ CHỌN,,False
+8,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+8,EN4347,Đồ án Tốt nghiệp,4,BẮT BUỘC,,True
+8,EN3003,Ứng dụng GIS và Viễn Thám trong Quản lý Tài nguyên và Môi trường,3,TỰ CHỌN,,False
+8,EN3023,Kỹ thuật Sinh thái,3,TỰ CHỌN,,False
+8,EN3037,Quản lý Môi trường Đô thị và Khu công nghiệp,3,TỰ CHỌN,,False
+8,EN3043,Kỹ thuật Lò đốt Chất thải,3,TỰ CHỌN,,False
+8,EN3073,An toàn Lao động và Vệ sinh Môi trường Công nghiệp,3,TỰ CHỌN,,False
+8,EN3079,Các Hệ thống Quản lý Môi trường,3,TỰ CHỌN,,False
+8,EN3083,Quan trắc Môi trường,3,TỰ CHỌN,,False
+8,EN3111,Các Quá trình Cơ học trong Kỹ thuật Môi trường,3,TỰ CHỌN,,False
+8,EN3113,Quản lý và Kỹ thuật Xử lý Đất ô nhiễm,3,TỰ CHỌN,,False
+8,EN3117,Vận hành Công trình Xử lý Môi trường,3,TỰ CHỌN,,False
+8,EN3087,Biến đổi Khí hậu,3,TỰ CHỌN,,False
+8,EN3209,Mô hình Hóa Môi trường,3,TỰ CHỌN,,False
+8,EN2057,Đồ án môn học Hóa học trong Kỹ thuật và Khoa học Môi trường,1,TỰ CHỌN,,False
+8,EN2059,Đồ án môn học Quá trình Hóa học và Hóa lý trong Kỹ thuật Môi trường,1,TỰ CHỌN,,False
+8,EN3127,Sản xuất sạch hơn,3,TỰ CHỌN,,False
+8,EN3205,Thủy văn Môi trường,3,TỰ CHỌN,,False
+8,EN3219,Kỹ thuật thông gió và kiểm soát ô nhiễm tiếng ồn,3,TỰ CHỌN,,False
+8,EN3215,Kiểm soát ô nhiễm không khí & tiếng ồn,3,TỰ CHỌN,,False
+8,EN3213,Tối ưu hóa và Quy hoạch thực nghiệm,3,TỰ CHỌN,,False

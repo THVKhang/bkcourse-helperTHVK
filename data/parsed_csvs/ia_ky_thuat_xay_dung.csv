@@ -1,0 +1,80 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,GE1001,Nhập môn về Kỹ thuật,3,BẮT BUỘC,,True
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+2,GE1013,Khoa học Trái đất,4,BẮT BUỘC,,True
+2,GE1029,Sức khỏe An toàn Môi trường,3,BẮT BUỘC,,True
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+2,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,GE1027,Khoa học dữ liệu,3,BẮT BUỘC,,True
+3,GE2065,Vật liệu xây dựng,2,BẮT BUỘC,,True
+3,GE2067,Sức bền - kết cấu vật liệu,3,BẮT BUỘC,,True
+3,GE2069,Trắc địa công trình,3,BẮT BUỘC,,True
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+4,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+4,GE2071,Kết cấu bê tông cốt thép,3,BẮT BUỘC,,True
+4,GE3229,Địa kỹ thuật công trình,4,BẮT BUỘC,,True
+4,GE2077,Địa chất thuỷ văn công trình,3,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+5,GE3225,Phân tích dữ liệu,3,BẮT BUỘC,,True
+5,GE3227,Thí nghiệm vật liệu và kết cấu bê tông cốt thép,1,BẮT BUỘC,,True
+5,GE2073,Các PP khảo sát và TN hiện trường,3,BẮT BUỘC,,True
+5,GE2075,Thực hành các phương pháp khảo sát và TN hiện trườn,0,BẮT BUỘC,,True
+5,GE3231,Quan trắc địa kỹ thuật công trình,3,BẮT BUỘC,,True
+5,GE3233,Địa động lực công trình,2,BẮT BUỘC,,True
+5,GE3235,Kinh tế xây dựng,2,BẮT BUỘC,,True
+5,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+6,GE3237,TK giải pháp cải tạo công trình trên đất yếu,3,BẮT BUỘC,,True
+6,GE3239,Kỹ thuật nền móng công trình,3,BẮT BUỘC,,True
+6,GE3241,Thí nghiệm địa kỹ thuật công trình,1,BẮT BUỘC,,True
+6,GE3243,Vẽ kỹ thuật xây dựng,3,BẮT BUỘC,,True
+6,GE3373,Thực tập ngoài trường,2,BẮT BUỘC,,True
+6,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+6,GE4161,TK hạ tầng kỹ thuật công trình,3,TỰ CHỌN,,False
+6,GE4163,Thi công công trình cơ sở hạ tầng,3,TỰ CHỌN,,False
+6,GE4165,Quản lý dự án,3,TỰ CHỌN,,False
+6,GE4167,Quy hoạch hạ tầng đô thị,3,TỰ CHỌN,,False
+6,IM1021,Khởi nghiệp,3,TỰ CHỌN,,False
+6,GE2099,Khoa học Trái Đất ứng dụng và Kinh tế tuần hoàn,3,TỰ CHỌN,,False
+7,GE4155,TK các giải pháp ổn định công trình,3,BẮT BUỘC,,True
+7,GE4157,Kết cấu thép công trình ngầm,3,BẮT BUỘC,,True
+7,GE4159,Đồ án chuyên ngành,2,BẮT BUỘC,,True
+7,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+7,GE4161,TK hạ tầng kỹ thuật công trình,3,TỰ CHỌN,,False
+7,GE4163,Thi công công trình cơ sở hạ tầng,3,TỰ CHỌN,,False
+7,GE4165,Quản lý dự án,3,TỰ CHỌN,,False
+7,GE4167,Quy hoạch hạ tầng đô thị,3,TỰ CHỌN,,False
+8,GE4169,Kỹ thuật thi công công trình ngầm,3,BẮT BUỘC,,True
+8,GE4365,Đồ án tốt nghiệp,4,BẮT BUỘC,,True
+8,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True

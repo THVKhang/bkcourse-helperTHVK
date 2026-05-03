@@ -15,3 +15,11 @@ class Section(Base):
     instructor_lt: Mapped[str | None] = mapped_column(Text, nullable=True)
     instructor_btn: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[object] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+    @property
+    def class_type(self) -> str:
+        code = self.section_code.upper()
+        if code.startswith("CC"): return "HIGH_QUALITY"
+        if code.startswith("TN"): return "TALENT"
+        if code.startswith("P"): return "PFIEV"
+        return "STANDARD" # Covers A, L, etc.

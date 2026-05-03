@@ -1,0 +1,85 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,ME1001,Nhập môn Về Kỹ thuật,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+2,PH1005,Vật lý 2,4,BẮT BUỘC,,True
+2,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+2,CI1003,Vẽ kỹ thuật,3,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,MT1009,Phương pháp tính,3,BẮT BUỘC,,True
+3,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+3,ME1015,Nguyên lý máy,4,BẮT BUỘC,,True
+3,CI2003,Cơ lưu chất,3,BẮT BUỘC,,True
+3,ME1013,Thực tập Cơ khí Đại cương 1,2,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+4,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+4,ME2129,Cơ sở Thiết kế máy,3,BẮT BUỘC,,True
+4,ME2121,"Bơm, Quạt, Máy nén",3,BẮT BUỘC,,True
+4,ME2099,Nhiệt động lực học Kỹ thuật,3,BẮT BUỘC,,True
+5,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+5,EE1005,Kỹ thuật điện,3,BẮT BUỘC,,True
+5,ME2159,Kỹ thuật lạnh,3,BẮT BUỘC,,True
+5,ME2161,Truyền nhiệt và thiết bị trao đổi nhiệt,3,BẮT BUỘC,,True
+5,ME3149,Thực tập Nhiệt đại cương,2,BẮT BUỘC,,True
+5,ME2019,Môi trường và Con người,3,BẮT BUỘC,,True
+6,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+6,ME3043,Lò hơi và Thiết bị đốt,3,BẮT BUỘC,,True
+6,ME3153,Kỹ thuật Điều hòa không khí,3,BẮT BUỘC,,True
+6,ME3155,Thực tập Kỹ thuật Nhiệt lạnh,2,BẮT BUỘC,,True
+6,ME3125,Thực tập Ngoài trường,2,BẮT BUỘC,,True
+6,ME3199,Đồ án Thiết kế - Hướng thiết bị Trao đổi nhiệt,2,TỰ CHỌN TỰ DO,FREE,False
+6,ME3151,Đồ án Thiết kế - Hướng thiết bị lạnh,2,TỰ CHỌN TỰ DO,FREE,False
+7,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+7,ME4081,Đồ án Chuyên ngành,2,BẮT BUỘC,,True
+7,IM1013,Kinh tế học Đại cương,3,TỰ CHỌN,,False
+7,IM1023,Quản lý Sản xuất cho Kỹ sư,3,TỰ CHỌN,,False
+7,IM1025,Quản lý Dự án cho Kỹ sư,3,TỰ CHỌN,,False
+7,IM1027,Kinh tế Kỹ thuật,3,TỰ CHỌN,,False
+7,IM3001,Quản trị Kinh doanh cho Kỹ sư,3,TỰ CHỌN,,False
+7,ME4131,Kỹ thuật sấy,3,TỰ CHỌN,,False
+7,ME4075,Thực hành Tính toán Mô phỏng trong Nhiệt lạnh,1,TỰ CHỌN,,False
+7,ME4015,Trung tâm Nhiệt điện,3,TỰ CHỌN,,False
+7,ME4073,Năng lượng Tái tạo,3,TỰ CHỌN,,False
+7,ME4307,Kinh tế Năng lượng,3,TỰ CHỌN,,False
+8,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+8,ME4337,Đồ án Tốt nghiệp,4,BẮT BUỘC,,True
+8,ME4313,Anh văn Chuyên ngành,3,TỰ CHỌN NHÓM C,C,False
+8,ME4083,Kỹ thuật Đo lường trong Nhiệt Lạnh,3,TỰ CHỌN NHÓM C,C,False
+8,ME4311,Điện trong Kỹ thuật lạnh,3,TỰ CHỌN NHÓM C,C,False
+8,ME4141,Kỹ thuật thông gió công nghiệp,3,TỰ CHỌN NHÓM C,C,False
+8,ME4305,Tuabin hơi và tuabin khí,3,TỰ CHỌN NHÓM C,C,False
+8,ME4307,Kinh tế Năng lượng,3,TỰ CHỌN NHÓM C,C,False
+8,ME4131,Kỹ thuật sấy,3,TỰ CHỌN NHÓM C,C,False
+8,ME4301,Vật liệu Nhiệt lạnh,3,TỰ CHỌN NHÓM C,C,False
+8,ME4303,Kỹ thuật cháy,3,TỰ CHỌN NHÓM C,C,False

@@ -1,0 +1,60 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+1,CH1001,Nhập môn về Kỹ thuật,3,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+2,CI1003,Vẽ kỹ thuật,3,BẮT BUỘC,,True
+2,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+3,CH2017,Kỹ thuật Thực phẩm 1,3,BẮT BUỘC,,True
+3,CH2021,Hóa hữu cơ,3,BẮT BUỘC,,True
+3,CH2007,Hóa học - Hóa sinh Thực phẩm,4,BẮT BUỘC,,True
+3,CH2049,Thí nghiệm Hóa học và Hóa sinh Thực phẩm,2,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+4,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+4,CH2035,Kỹ thuật Thực phẩm 2,3,BẮT BUỘC,,True
+4,CH2045,Vi sinh Thực phẩm,3,BẮT BUỘC,,True
+4,CH3001,Thí nghiệm Vi sinh Thực phẩm,2,BẮT BUỘC,,True
+4,CH2111,Thí nghiệm Hóa hữu cơ Cơ bản,1,BẮT BUỘC,,True
+5,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+5,CH2039,Kỹ thuật Thực phẩm 3,3,BẮT BUỘC,,True
+5,CH1005,Hóa lý Hóa keo,3,BẮT BUỘC,,True
+5,CH1019,Dinh dưỡng,3,BẮT BUỘC,,True
+5,CH3017,Công nghệ Chế biến Thực phẩm,3,BẮT BUỘC,,True
+5,CH4159,An toàn Thực phẩm,3,TỰ CHỌN,,False
+5,CH4163,An toàn Sinh học,3,TỰ CHỌN,,False
+6,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+6,CH3015,Thí nghiệm Quá trình Thiết bị,2,BẮT BUỘC,,True
+6,CH4001,Thí nghiệm Công nghệ Chế biến Thực phẩm,2,BẮT BUỘC,,True
+6,CH3053,Thiết kế Nhà máy Thực phẩm,3,BẮT BUỘC,,True
+6,CH3371,Phân tích Thực phẩm,3,BẮT BUỘC,,True
+6,CH3365,Thực tập Ngoài trường,2,BẮT BUỘC,,True
+6,IM1013,Kinh tế học Đại cương,3,TỰ CHỌN NHÓM C,C,False
+6,IM1021,Khởi nghiệp,3,TỰ CHỌN NHÓM C,C,False
+6,IM1023,Quản lý Sản xuất cho Kỹ sư,3,TỰ CHỌN NHÓM C,C,False
+6,IM1025,Quản lý Dự án cho Kỹ sư,3,TỰ CHỌN NHÓM C,C,False
+6,IM1027,Kinh tế Kỹ thuật,3,TỰ CHỌN NHÓM C,C,False
+6,CH4101,Quản trị Chất lượng Thực phẩm,3,TỰ CHỌN NHÓM C,C,False
+7,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+7,CH4099,Đồ án Thiết kế Nhà máy Thực phẩm,2,BẮT BUỘC,,True
+7,CH4103,Đồ án Chuyên ngành,2,BẮT BUỘC,,True
+7,CH3049,Phân tích Cảm quan Thực phẩm,3,BẮT BUỘC,,True
+7,CH3433,Thực hành phân tích thực phẩm,2,BẮT BUỘC,,True
+7,CH4155,Thực phẩm từ thực vật,3,BẮT BUỘC,,True
+7,CH4107,Phát triển Sản phẩm Thực phẩm mới,3,TỰ CHỌN NHÓM B,B,False
+7,CH4111,Vật lý thực phẩm,3,TỰ CHỌN NHÓM B,B,False
+7,CH4113,Kỹ thuật Bao gói Thực phẩm,3,TỰ CHỌN NHÓM B,B,False
+7,CH4115,Công nghệ Sau Thu hoạch,3,TỰ CHỌN NHÓM B,B,False
+7,CH4157,Thực phẩm từ động vật,3,TỰ CHỌN NHÓM B,B,False
+8,CH4367,Đồ án Tốt nghiệp,4,BẮT BUỘC,,True
+8,CH3435,Công nghệ lên men thực phẩm,3,BẮT BUỘC,,True
+8,CH4111,Vật lý thực phẩm,3,TỰ CHỌN TỰ DO,FREE,False
+8,CH4113,Kỹ thuật Bao gói Thực phẩm,3,TỰ CHỌN TỰ DO,FREE,False
+8,CH4115,Công nghệ Sau Thu hoạch,3,TỰ CHỌN TỰ DO,FREE,False

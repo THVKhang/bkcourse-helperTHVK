@@ -1,0 +1,75 @@
+﻿semester_no,subject_id,subject_name,credits,course_type,elective_group,is_required
+1,MT1003,Giải tích 1,4,BẮT BUỘC,,True
+1,LA1003,Anh văn 1,2,BẮT BUỘC,,True
+1,PH1003,Vật lý 1,4,BẮT BUỘC,,True
+1,PH1007,Thí nghiệm Vật lý,1,BẮT BUỘC,,True
+1,CI1001,Nhập môn Về kỹ thuật,3,BẮT BUỘC,,True
+1,MT1007,Đại số Tuyến tính,3,BẮT BUỘC,,True
+1,PE1009,Bóng đá (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1011,Bóng chuyền (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1013,Bóng bàn (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1015,Bóng rổ (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1017,Cầu lông (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1019,Bơi (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1021,Aerobic (học Phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1025,Điền kinh (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1027,Quần vợt (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1053,Cờ vua (Học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1057,Bowling (học phần 1),0,Thể dục (Chọn 1),PE,False
+1,PE1061,Pickleball (học phần 1),0,Thể dục (Chọn 1),PE,False
+2,MT1005,Giải tích 2,4,BẮT BUỘC,,True
+2,LA1005,Anh văn 2,2,BẮT BUỘC,,True
+2,CH1003,Hóa đại cương,3,BẮT BUỘC,,True
+2,CI1069,Khoa học Trái đất,4,BẮT BUỘC,,True
+2,CI1077,Nguyên lý kinh tế học,3,BẮT BUỘC,,True
+2,MI1003,Giáo dục Quốc phòng,0,BẮT BUỘC,,True
+2,PE1033,Bóng đá (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1035,Bóng chuyền (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1037,Bóng bàn (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1039,Bóng rổ (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1041,Cầu lông (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1043,Bơi (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1045,Aerobic (học Phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1049,Điền kinh (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1051,Quần vợt (Học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1055,Cờ vua (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1059,Bowling (học phần 2),0,Thể dục (Chọn 1),PE,False
+2,PE1063,Pickleball (học phần 2),0,Thể dục (Chọn 1),PE,False
+3,MT2013,Xác suất và Thống kê,4,BẮT BUỘC,,True
+3,LA1007,Anh văn 3,2,BẮT BUỘC,,True
+3,SP1007,Pháp luật Việt Nam Đại cương,2,BẮT BUỘC,,True
+3,CI2159,Bản vẽ xây dựng và đồ họa máy tính,3,BẮT BUỘC,,True
+3,CI2007,Sức bền Vật liệu,4,BẮT BUỘC,,True
+4,MT1009,Phương pháp tính,3,BẮT BUỘC,,True
+4,SP1031,Triết học Mác - Lênin,3,BẮT BUỘC,,True
+4,LA1009,Anh văn 4,2,BẮT BUỘC,,True
+4,CI2037,Vật liệu Xây dựng,3,BẮT BUỘC,,True
+4,CI2161,Kinh tế kỹ thuật,3,BẮT BUỘC,,True
+4,CI2163,Phân tích sự làm việc công trình,3,BẮT BUỘC,,True
+5,SP1033,Kinh tế Chính trị Mác - Lênin,2,BẮT BUỘC,,True
+5,CI3487,Nguyên tắc thiết kế công trình thép và bê tông cốt thép,3,BẮT BUỘC,,True
+5,CI3493,Nguyên lý quản lý dự án trong xây dựng,3,BẮT BUỘC,,True
+5,CI3489,Hệ thống quy phạm và tiêu chuẩn trong xây dựng,3,BẮT BUỘC,,True
+5,CI3491,Luật và môi trường pháp lý trong xây dựng,3,BẮT BUỘC,,True
+5,CI3289,Lãnh đạo và Khởi nghiệp,3,TỰ CHỌN,,False
+5,CI3291,Lãnh đạo và Quản Lý Dự án,3,TỰ CHỌN,,False
+5,IM1031,Khởi nghiệp và đổi mới sáng tạo,3,TỰ CHỌN,,False
+5,ME1019,Quản lý năng suất và chất lượng,3,TỰ CHỌN,,False
+6,SP1035,Chủ nghĩa Xã hội Khoa học,2,BẮT BUỘC,,True
+6,CI3501,Bóc tách khối lượng,3,BẮT BUỘC,,True
+6,CI3497,Dự toán và định giá trong xây dựng,3,BẮT BUỘC,,True
+6,CI3043,Kỹ thuật Thi công,3,BẮT BUỘC,,True
+6,CI3495,Thực tập ngoài trường,2,BẮT BUỘC,,True
+7,SP1039,Lịch sử Đảng Cộng sản Việt Nam,2,BẮT BUỘC,,True
+7,CI4217,Hợp đồng trong xây dựng,3,BẮT BUỘC,,True
+7,CI4221,Đồ án chuyên ngành,2,BẮT BUỘC,,True
+7,CI4219,Đấu thầu và tổ chức đấu thầu,3,BẮT BUỘC,,True
+7,CI4223,Quản lý kinh doanh trong xây dựng,3,TỰ CHỌN,,False
+7,CI4225,Quản lý xây dựng ứng dụng mô hình hóa thông tin công trình,3,TỰ CHỌN,,False
+7,CI4229,Nguyên tắc kế toán trong xây dựng,3,TỰ CHỌN,,False
+7,CI4227,Mua hàng và chuỗi cung ứng trong xây dựng,3,TỰ CHỌN,,False
+7,CI4231,Tài chính và phân tích khả thi dự án,3,TỰ CHỌN,,False
+8,CI4233,Tổ chức thi công,3,BẮT BUỘC,,True
+8,SP1037,Tư tưởng Hồ Chí Minh,2,BẮT BUỘC,,True
+8,EN1003,Con người và Môi trường,3,BẮT BUỘC,,True
+8,CI4497,Đồ án tốt nghiệp,4,BẮT BUỘC,,True

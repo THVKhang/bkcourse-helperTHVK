@@ -25,6 +25,7 @@ import os
 origins = [
     settings.CORS_ORIGINS,
     "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
 # On Vercel, frontend and backend share the same domain
 if os.environ.get("VERCEL"):

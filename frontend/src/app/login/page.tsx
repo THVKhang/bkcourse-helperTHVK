@@ -103,10 +103,15 @@ export default function LoginPage() {
   // Forgot password form
   if (mode === "forgot") {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center p-4">
-        <Card className="w-full max-w-md shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
+      <div className="min-h-[80vh] flex items-center justify-center p-4 relative">
+        {/* Animated mesh background */}
+        <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none">
+          <div className="absolute w-[400px] h-[400px] rounded-full blur-[100px] -top-20 -left-20 opacity-30" style={{background: 'hsl(var(--primary))', animation: 'mesh-move-1 15s ease-in-out infinite'}} />
+          <div className="absolute w-[350px] h-[350px] rounded-full blur-[100px] -bottom-20 -right-20 opacity-20" style={{background: 'hsl(var(--accent))', animation: 'mesh-move-2 18s ease-in-out infinite'}} />
+        </div>
+        <Card className="w-full max-w-md shadow-xl border-border/50 bg-card/80 backdrop-blur-sm animate-scale-in">
           <CardHeader className="text-center pb-2">
-            <div className="mx-auto bg-gradient-to-br from-primary/20 to-accent/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-primary/10">
+            <div className="mx-auto bg-gradient-to-br from-primary/20 to-accent/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-primary/10 animate-float-slow">
               <KeyRound className="h-7 w-7 text-primary" />
             </div>
             <CardTitle className="text-xl font-bold">Quên mật khẩu</CardTitle>
@@ -133,10 +138,15 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center p-4">
-      <Card className="w-full max-w-md shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
+    <div className="min-h-[80vh] flex items-center justify-center p-4 relative">
+      {/* Animated mesh background */}
+      <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none">
+        <div className="absolute w-[400px] h-[400px] rounded-full blur-[100px] -top-20 -left-20 opacity-30" style={{background: 'hsl(var(--primary))', animation: 'mesh-move-1 15s ease-in-out infinite'}} />
+        <div className="absolute w-[350px] h-[350px] rounded-full blur-[100px] -bottom-20 -right-20 opacity-20" style={{background: 'hsl(var(--accent))', animation: 'mesh-move-2 18s ease-in-out infinite'}} />
+      </div>
+      <Card className="w-full max-w-md shadow-xl border-border/50 bg-card/80 backdrop-blur-sm animate-scale-in">
         <CardHeader className="space-y-1 text-center pb-2">
-          <div className="mx-auto bg-gradient-to-br from-primary/20 to-accent/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-primary/10">
+          <div className="mx-auto bg-gradient-to-br from-primary/20 to-accent/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-primary/10 animate-float-slow">
             <GraduationCap className="h-7 w-7 text-primary" />
           </div>
           <CardTitle className="text-2xl font-bold tracking-tight">Chào mừng đến BKCourse</CardTitle>

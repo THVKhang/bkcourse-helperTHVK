@@ -86,8 +86,8 @@ export function InteractiveTimetable({
                   <DraggableBlock
                     key={bi}
                     id={b.subjectId}
-                    className={`timetable-block color-${colorMap[b.subjectId] ?? 0} !text-[10px] !p-1 cursor-pointer transition-all ${hovered === `${b.subjectId}_${b.dayIdx}_${b.startP}` ? 'ring-2 ring-primary z-20 scale-105' : ''} ${b.campus === '2' ? '!border-l-2 !border-l-orange-400' : ''}`}
-                    style={{ height: `calc(${b.dur * 100}% + ${b.dur - 1}px)` }}
+                    className={`timetable-block color-${colorMap[b.subjectId] ?? 0} !text-[10px] !p-1 cursor-pointer ${hovered === `${b.subjectId}_${b.dayIdx}_${b.startP}` ? 'ring-2 ring-primary z-20 scale-105' : ''} ${b.campus === '2' ? '!border-l-2 !border-l-orange-400' : ''}`}
+                    style={{ height: `calc(${b.dur * 100}% + ${b.dur - 1}px)`, animationDelay: `${(b.dayIdx * 0.06) + (b.startP * 0.025)}s` }}
                     onMouseEnter={() => setHovered(`${b.subjectId}_${b.dayIdx}_${b.startP}`)}
                     onMouseLeave={() => setHovered(null)}
                   >
@@ -95,7 +95,7 @@ export function InteractiveTimetable({
                     {b.dur >= 2 && <div className="truncate opacity-70">{b.room || ''}</div>}
                     {/* Tooltip */}
                     {hovered === `${b.subjectId}_${b.dayIdx}_${b.startP}` && (
-                      <div className="absolute left-full ml-1 top-0 z-50 w-48 rounded-lg bg-popover border border-border shadow-xl p-2.5 text-[11px] text-popover-foreground animate-fade-in" style={{animationDuration:'0.15s'}}>
+                      <div className="tooltip-slide absolute left-full ml-2 top-0 z-50 w-48 rounded-lg bg-popover border border-border shadow-xl p-2.5 text-[11px] text-popover-foreground">
                         <div className="font-bold text-primary text-xs mb-1">{b.subjectId}</div>
                         {b.subjectName && <div className="text-muted-foreground mb-1">{b.subjectName}</div>}
                         <div className="grid gap-0.5">

@@ -1,174 +1,186 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/components/UserProvider";
-import { Button } from "@/components/ui/button";
-import {
-  CalendarDays, BookOpen, Sparkles, ArrowRight,
-  GraduationCap, Zap, Shield, ChevronRight,
-} from "lucide-react";
+import { ArrowRight, Calendar, BookOpen, Sparkles, Zap, Shield, GraduationCap } from "lucide-react";
+
+/* ── Scroll-triggered reveal hook (Paraform-style) ── */
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.opacity = "0";
+    el.style.transform = "translateY(32px)";
+    el.style.filter = "blur(3px)";
+    el.style.transition = "opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.8s cubic-bezier(0.16,1,0.3,1)";
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+        el.style.filter = "blur(0)";
+        observer.unobserve(el);
+      }
+    }, { threshold: 0.15 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
 
 const FEATURES = [
   {
     href: "/planner",
-    icon: CalendarDays,
+    icon: Calendar,
     title: "Xếp lịch thông minh",
-    desc: "Import dữ liệu từ MyBK, tự động xếp lịch với 4 kiểu (cân bằng, sáng/chiều, gom ngày), và xuất ra Excel / Google Calendar.",
-    gradient: "from-blue-500 to-cyan-500",
-    bgGlow: "bg-blue-500/10",
+    desc: "Import dữ liệu từ MyBK, tự động xếp lịch với nhiều chiến lược và xuất ra Excel hoặc Google Calendar.",
+    tag: "Phổ biến",
+    accent: "from-indigo-500 to-violet-500",
+    iconBg: "bg-indigo-50 dark:bg-indigo-950/40",
+    iconColor: "text-indigo-600 dark:text-indigo-400",
   },
   {
     href: "/study-plan",
     icon: BookOpen,
     title: "Kế hoạch học tập",
-    desc: "Theo dõi 128 tín chỉ với progress ring, tự động detect sinh viên năm mấy và gợi ý lịch học cho học kỳ tới.",
-    gradient: "from-emerald-500 to-teal-500",
-    bgGlow: "bg-emerald-500/10",
+    desc: "Theo dõi tiến độ tín chỉ, tự động gợi ý môn học cho học kỳ tới theo chuyên ngành của bạn.",
+    tag: "Mới",
+    accent: "from-emerald-500 to-teal-500",
+    iconBg: "bg-emerald-50 dark:bg-emerald-950/40",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
   },
 ];
 
-const HIGHLIGHTS = [
-  { icon: Zap, label: "Phát hiện trùng lịch", color: "text-blue-500" },
-  { icon: Shield, label: "Check tiên quyết", color: "text-emerald-500" },
-  { icon: GraduationCap, label: "Tiến độ 128 tín", color: "text-violet-500" },
+const STATS = [
+  { value: "59", label: "Chương trình" },
+  { value: "3500+", label: "Môn học" },
+  { value: "∞", label: "Tổ hợp lịch" },
 ];
 
 export default function Home() {
   const router = useRouter();
   const { isLoggedIn, termCode } = useUser();
-
-  function handleStart() {
-    router.push("/planner");
-  }
+  const statsRef = useReveal();
+  const featuresRef = useReveal();
+  const highlightsRef = useReveal();
 
   return (
-    <div className="grid gap-10">
+    <div className="grid gap-16 py-8">
+      {/* Quick-resume banner */}
       {isLoggedIn && termCode && (
-        <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 flex items-center justify-between shadow-sm animate-slide-up">
+        <div className="flex items-center justify-between rounded-full border border-border bg-secondary/50 px-5 py-3 animate-fade-in">
           <div className="flex items-center gap-3">
-            <div className="bg-primary/20 p-2 rounded-full">
-              <Sparkles className="h-5 w-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-sm">Chưa hoàn thành xếp lịch?</h3>
-              <p className="text-xs text-muted-foreground">Tiếp tục công việc đang dang dở cho Học kỳ {termCode}.</p>
-            </div>
+            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-sm text-muted-foreground">
+              Tiếp tục xếp lịch HK {termCode}
+            </span>
           </div>
-          <Button size="sm" onClick={handleStart} className="gap-2">
-            Tiếp tục ngay <ArrowRight className="h-4 w-4" />
-          </Button>
+          <button
+            onClick={() => router.push("/planner")}
+            className="text-sm font-semibold text-foreground hover:underline underline-offset-4 flex items-center gap-1"
+          >
+            Tiếp tục <ArrowRight className="h-3.5 w-3.5" />
+          </button>
         </div>
       )}
 
       {/* ===== HERO ===== */}
-      <section className="mesh-hero relative rounded-2xl border border-border/30 p-8 sm:p-12 lg:p-16 animate-fade-in">
-        {/* Mesh blobs */}
-        <div className="mesh-blob mesh-blob-1" />
-        <div className="mesh-blob mesh-blob-2" />
-        <div className="mesh-blob mesh-blob-3" />
+      <section className="relative text-center py-16 animate-reveal">
+        <div className="absolute inset-0 bg-dots opacity-30 pointer-events-none" />
 
-        {/* Floating particles */}
-        {[
-          { size: 6, top: "12%", left: "8%", delay: "0s", dur: "4s" },
-          { size: 4, top: "25%", right: "12%", delay: "1s", dur: "5s" },
-          { size: 8, bottom: "20%", left: "15%", delay: "2s", dur: "6s" },
-          { size: 5, top: "60%", right: "25%", delay: "0.5s", dur: "4.5s" },
-          { size: 3, top: "40%", left: "60%", delay: "1.5s", dur: "5.5s" },
-          { size: 7, bottom: "30%", right: "8%", delay: "3s", dur: "7s" },
-        ].map((p, i) => (
-          <div
-            key={i}
-            className="particle animate-float"
-            style={{
-              width: p.size, height: p.size,
-              top: p.top, left: p.left, right: p.right, bottom: p.bottom,
-              animationDelay: p.delay, animationDuration: p.dur,
-            }}
-          />
-        ))}
-
-        <div className="relative z-10 mx-auto max-w-2xl text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm">
-            <GraduationCap className="h-4 w-4" />
+        <div className="relative z-10 mx-auto max-w-2xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/40 px-4 py-1.5 text-xs font-medium text-indigo-600 dark:text-indigo-400 tracking-wide uppercase">
+            <GraduationCap className="h-3.5 w-3.5" />
             Dành cho sinh viên HCMUT
           </div>
 
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl leading-[1.1]">
-            <span className="gradient-text">BKCourse</span>{" "}
-            <span className="text-foreground">Helper</span>
+          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.1] text-foreground tracking-tight">
+            Chọn môn{" "}
+            <span className="italic bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400 bg-clip-text text-transparent">thông minh</span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Chọn môn thông minh, xây thời khóa biểu không trùng, theo dõi tiến độ tích lũy tín chỉ.
+          <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Xây thời khóa biểu không trùng, theo dõi tiến độ tích lũy, nhận đề xuất môn học cá nhân hóa.
           </p>
 
-          {/* CTA Button */}
-          <div className="mx-auto mt-8 flex max-w-sm justify-center">
-            <Button onClick={handleStart} className="btn-neon gap-2 rounded-xl px-8 py-3 text-base font-semibold dark:animate-pulse-glow">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => router.push("/planner")}
+              className="btn-pill px-8 py-3 text-base"
+            >
               Bắt đầu xếp lịch
               <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-
-          {/* Secondary CTA */}
-          <div className="mt-4 flex justify-center">
+            </button>
             <Link
               href="/study-plan"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground underline-offset-4 hover:underline"
             >
-              <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-              hoặc xem kế hoạch học tập trước
-              <ChevronRight className="h-3.5 w-3.5" />
+              Xem kế hoạch học tập →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ===== HIGHLIGHTS ===== */}
-      <section className="flex flex-wrap items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-        {HIGHLIGHTS.map((h) => (
-          <div
-            key={h.label}
-            className="flex items-center gap-2 rounded-full border border-border/40 bg-card px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md hover:border-primary/20"
-          >
-            <h.icon className={`h-4 w-4 ${h.color}`} />
-            <span className="text-muted-foreground">{h.label}</span>
+      {/* ===== STATS ===== */}
+      <section ref={statsRef} className="grid grid-cols-3 gap-8 max-w-lg mx-auto text-center">
+        {STATS.map((s) => (
+          <div key={s.label}>
+            <div className="font-display text-3xl sm:text-4xl text-foreground">{s.value}</div>
+            <div className="text-xs text-muted-foreground mt-1 tracking-wide uppercase">{s.label}</div>
           </div>
         ))}
       </section>
 
-      {/* ===== FEATURE CARDS ===== */}
-      <section className="grid gap-4 sm:grid-cols-2">
-        {FEATURES.map((f, i) => (
+      {/* ===== FEATURES ===== */}
+      <section ref={featuresRef} className="grid gap-4 sm:grid-cols-2">
+        {FEATURES.map((f) => (
           <Link
             key={f.href}
             href={f.href}
-            className="card-interactive group relative overflow-hidden rounded-xl p-6 animate-slide-up stagger-item"
+            className="card-interactive group relative p-8"
           >
-            {/* Gradient accent left border */}
-            <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${f.gradient} opacity-40 transition-opacity group-hover:opacity-100`} />
+            {/* Gradient accent top */}
+            <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${f.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
-            {/* Hover gradient overlay */}
-            <div className={`absolute inset-0 ${f.bgGlow} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
-
-            <div className="relative z-10">
-              {/* Icon in gradient circle */}
-              <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${f.gradient} bg-opacity-10 shadow-sm`}>
-                <f.icon className="h-5 w-5 text-white" />
+            <div className="flex items-start justify-between mb-5">
+              <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${f.iconBg} transition-transform duration-300 group-hover:scale-110`}>
+                <f.icon className={`h-5 w-5 ${f.iconColor}`} />
               </div>
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground border border-border rounded-full px-2.5 py-0.5">
+                {f.tag}
+              </span>
+            </div>
 
-              <h2 className="text-lg font-bold text-foreground">{f.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+            <h2 className="font-display text-xl text-foreground mb-2">{f.title}</h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
 
-              <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-primary opacity-50 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
-                Mở
-                <ArrowRight className="h-3.5 w-3.5" />
-              </div>
+            <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-muted-foreground group-hover:text-foreground transition-all group-hover:translate-x-2 duration-300">
+              Khám phá
+              <ArrowRight className="h-3.5 w-3.5" />
             </div>
           </Link>
         ))}
+      </section>
+
+      {/* ===== HIGHLIGHTS ===== */}
+      <section ref={highlightsRef} className="text-center">
+        <div className="section-divider mx-auto max-w-[100px] mb-8" />
+        <div className="grid grid-cols-3 gap-6 max-w-md mx-auto">
+          {[
+            { icon: Zap, label: "Phát hiện trùng lịch", color: "text-amber-500" },
+            { icon: Shield, label: "Check tiên quyết", color: "text-emerald-500" },
+            { icon: GraduationCap, label: "Tiến độ tín chỉ", color: "text-indigo-500" },
+          ].map((h) => (
+            <div key={h.label} className="text-center group cursor-default">
+              <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center mx-auto mb-2 transition-transform duration-300 group-hover:scale-110">
+                <h.icon className={`h-4.5 w-4.5 ${h.color}`} />
+              </div>
+              <span className="text-xs text-muted-foreground">{h.label}</span>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

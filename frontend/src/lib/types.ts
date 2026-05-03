@@ -1,4 +1,4 @@
-export type Program = { program_id: number; name: string; cohort_year: number; total_credits?: number | null };
+export type Program = { program_id: number; name: string; cohort_year: number; total_credits?: number | null; faculty?: string | null; };
 
 export type SemesterPlanItem = {
   semester_no: number;
@@ -51,7 +51,7 @@ export type RecommendationResponse = {
 };
 
 // Schedule Generator
-export type SchedulePreference = "COMPACT_DAYS" | "MORNING_ONLY" | "AFTERNOON_ONLY" | "BALANCED" | "SAME_CAMPUS";
+export type SchedulePreference = "COMPACT_DAYS" | "MORNING_ONLY" | "AFTERNOON_ONLY" | "BALANCED" | "SAME_CAMPUS" | "CUSTOM_DAYS";
 export type ScheduleMeetingItem = { day_of_week: number; start_period: number; duration: number; room?: string | null; campus_code?: string | null; study_weeks?: number[] };
 export type ScheduleItem = { section_id: number; subject_id: string; section_code: string; subject_name?: string | null; credits: number; instructor_lt?: string | null; instructor_btn?: string | null; meetings: ScheduleMeetingItem[] };
 export type CampusConflict = { day: number; day_name: string; from_campus: string; to_campus: string; gap_periods: number; is_critical: boolean };
