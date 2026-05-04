@@ -20,14 +20,14 @@ else:
     VENV_PYTHON = os.path.join(BACKEND_DIR, "venv", "bin", "python")
 
 if not os.path.exists(VENV_PYTHON):
-    print(f"❌ Không tìm thấy venv tại: {VENV_PYTHON}")
-    print("   Hãy chạy: cd backend && python -m venv venv && venv\\Scripts\\pip install -r requirements.txt")
+    print(f"[X] Khong tim thay venv tai: {VENV_PYTHON}")
+    print("   Hay chay: cd backend && python -m venv venv && venv\\Scripts\\pip install -r requirements.txt")
     sys.exit(1)
 
 processes = []
 
 def cleanup(*_):
-    print("\n🛑 Đang dừng servers...")
+    print("\n[!] Dang dung servers...")
     for p in processes:
         try:
             if sys.platform == "win32":
@@ -43,7 +43,7 @@ signal.signal(signal.SIGTERM, cleanup)
 
 if __name__ == "__main__":
     print()
-    print("🎓 BKCourse Helper — Starting...")
+    print("[*] BKCourse Helper -- Starting...")
     print("=" * 45)
 
     # Backend
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         cwd=BACKEND_DIR,
     )
     processes.append(backend)
-    print("✅ Backend  → http://localhost:8000")
+    print("[OK] Backend  -> http://localhost:8000")
 
     # Frontend
     npm_cmd = "npm.cmd" if sys.platform == "win32" else "npm"
@@ -61,18 +61,18 @@ if __name__ == "__main__":
         cwd=FRONTEND_DIR,
     )
     processes.append(frontend)
-    print("✅ Frontend → http://localhost:3000")
+    print("[OK] Frontend -> http://localhost:3000")
 
     print("=" * 45)
-    print("🌐 Mở http://localhost:3000 để bắt đầu!")
-    print("   Nhấn Ctrl+C để dừng cả 2 server.")
+    print("[*] Mo http://localhost:3000 de bat dau!")
+    print("   Nhan Ctrl+C de dung ca 2 server.")
     print()
 
     try:
         while True:
             # Check if either process died
             if backend.poll() is not None:
-                print("⚠️  Backend đã dừng! Tự động khởi động lại sau 2s...")
+                print("[!] Backend da dung! Tu dong khoi dong lai sau 2s...")
                 time.sleep(2)
                 backend = subprocess.Popen(
                     [VENV_PYTHON, "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
@@ -81,7 +81,7 @@ if __name__ == "__main__":
                 processes[0] = backend
 
             if frontend.poll() is not None:
-                print("⚠️  Frontend đã dừng! Tự động khởi động lại sau 2s...")
+                print("[!] Frontend da dung! Tu dong khoi dong lai sau 2s...")
                 time.sleep(2)
                 frontend = subprocess.Popen(
                     [npm_cmd, "run", "dev"],

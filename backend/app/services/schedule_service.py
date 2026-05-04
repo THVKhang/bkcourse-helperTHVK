@@ -528,4 +528,4 @@ def generate_options(
             ))
         alternative_sections[sid] = items
 
-    return options, alternative_sections
+    return options, alternative_sections, global_warnings
